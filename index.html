@@ -1,0 +1,1092 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Al qomus - Kamus Shorof Modern</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            emerald: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+              950: '#022c22',
+            },
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .arabic-font {
+      font-family: 'Amiri', serif;
+    }
+    /* Custom scrollbar for premium look */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #10b981;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #059669;
+    }
+  </style>
+</head>
+<body class="bg-stone-50 text-slate-800 min-h-screen flex flex-col selection:bg-emerald-200">
+
+  <!-- TOP HEADER -->
+  <header class="bg-gradient-to-r from-emerald-900 to-emerald-850 text-white shadow-md sticky top-0 z-30">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="bg-emerald-600/30 p-2 rounded-xl border border-emerald-500/20">
+          <i data-lucide="book-open" class="w-6 h-6 text-emerald-300"></i>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold tracking-wide">Al qomus</h1>
+          <p class="text-xs text-emerald-300/80">Kamus Shorof & Klasifikasi Tsulasi</p>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-2">
+        <!-- Memory Count Button -->
+        <button id="btn-memory" class="bg-emerald-800/85 hover:bg-emerald-700/90 text-emerald-100 px-3 py-1.5 rounded-xl border border-emerald-700/50 flex items-center space-x-2 text-sm transition-all shadow-sm">
+          <i data-lucide="database" class="w-4 h-4 text-emerald-400"></i>
+          <span class="font-semibold">Memori:</span>
+          <span id="memory-counter" class="bg-emerald-600 text-white text-xs px-2 py-0.5 rounded-full">0</span>
+        </button>
+
+        <!-- Danger Clear Button -->
+        <button id="btn-clear-all" class="bg-red-950/40 hover:bg-red-900/60 text-red-200 p-2 rounded-xl border border-red-900/30 transition-all" title="Hapus Semua Kata">
+          <i data-lucide="trash-2" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-grow max-w-4xl w-full mx-auto px-4 py-6 space-y-6">
+
+    <!-- SEARCH & CONTROLS -->
+    <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 space-y-4">
+      <div class="relative">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+          <i data-lucide="search" class="text-slate-400 w-5 h-5"></i>
+        </div>
+        <input 
+          type="text" 
+          id="search-input" 
+          placeholder="Cari kata Fi'il Madhi (cth: كتب) atau arti bahasa Indonesia..." 
+          class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none text-slate-700 transition-all text-sm placeholder:text-slate-400"
+        >
+      </div>
+
+      <!-- Quick Actions Container -->
+      <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-slate-100">
+        <span class="text-xs text-slate-400 flex items-center">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 mr-1 text-emerald-500"></i>
+          Ketik kata untuk mencari di memori atau gunakan AI Online langsung!
+        </span>
+        <div class="flex items-center space-x-2">
+          <button id="btn-open-import" class="bg-emerald-50 hover:bg-emerald-100/80 text-emerald-700 px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center space-x-1.5 border border-emerald-200 transition-all">
+            <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+            <span>Impor TXT</span>
+          </button>
+          <button id="btn-api-settings" class="bg-slate-100 hover:bg-slate-200/80 text-slate-700 px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center space-x-1.5 transition-all">
+            <i data-lucide="key-round" class="w-3.5 h-3.5"></i>
+            <span>Kunci API Gemini</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN INTERFACE: SEARCH RESULTS -->
+    <section id="search-results-section" class="hidden space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="text-sm font-semibold text-slate-500 tracking-wider uppercase flex items-center">
+          <i data-lucide="align-left" class="w-4 h-4 mr-1.5 text-emerald-600"></i>
+          Hasil Pencarian Kamus
+        </h2>
+        <span id="search-count" class="text-xs bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full font-medium">0 ditemukan</span>
+      </div>
+
+      <div id="search-cards-container" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <!-- Cards will dynamically spawn here -->
+      </div>
+    </section>
+
+    <!-- INTRO & MANUAL INSTRUCTIONS (If memory is empty) -->
+    <section id="empty-state-banner" class="bg-gradient-to-br from-emerald-50 to-stone-100 rounded-3xl p-8 text-center border border-emerald-100/50 space-y-4 shadow-sm">
+      <div class="bg-emerald-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto shadow-inner">
+        <i data-lucide="folder-search" class="w-8 h-8 text-emerald-700"></i>
+      </div>
+      <div class="max-w-md mx-auto space-y-2">
+        <h3 class="text-lg font-bold text-slate-800">Kamus Masih Kosong</h3>
+        <p class="text-sm text-slate-500 leading-relaxed">
+          Silakan impor daftar kata kerja *Fi'il Madhi* dari file teks (.txt) atau langsung ketikkan kata kerja baru di kolom pencarian atas untuk dicari secara online menggunakan AI!
+        </p>
+      </div>
+      <div class="pt-2 flex justify-center gap-3">
+        <button onclick="document.getElementById('btn-open-import').click()" class="bg-white text-emerald-700 border border-emerald-200 hover:bg-emerald-50 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all shadow-sm inline-flex items-center space-x-2">
+          <i data-lucide="file-plus-2" class="w-4 h-4"></i>
+          <span>Impor File TXT</span>
+        </button>
+        <button onclick="dom.searchBar.focus();" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-all shadow-md inline-flex items-center space-x-2">
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
+          <span>Cari Instan via AI</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- TRIVIA BANNER (Quick tips) -->
+    <div class="bg-white rounded-2xl p-5 border border-slate-100 space-y-3 shadow-sm">
+      <h4 class="text-sm font-semibold text-emerald-800 flex items-center">
+        <i data-lucide="book-open-check" class="w-4 h-4 mr-1.5 text-emerald-600"></i>
+        Mengenal Klasifikasi Tsulasi & Bina'
+      </h4>
+      <p class="text-xs text-slate-500 leading-relaxed">
+        Sistem kecerdasan buatan dalam aplikasi ini dirancang khusus untuk mengidentifikasi **Tsulasi Mujarrad** dan **Tsulasi Mazid (Rubai, Khumasi, Sudasi)** secara otomatis. Selain tasrif istilahi, AI juga menganalisis jenis **Bina'** (karakteristik huruf shahih/illat) serta pola **Bab** tasrif yang sesuai dengan kaidah gramatika bahasa Arab klasik rujukan kitab **Al-Munjid**.
+      </p>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-100 border-t border-slate-200 mt-auto py-4">
+    <div class="max-w-4xl mx-auto px-4 text-center text-xs text-slate-400 space-y-1">
+      <p>Al qomus v3.0 — Terintegrasi AI Pencarian Utama & Offline Database</p>
+      <p>Dirancang untuk akselerasi penguasaan morfologi & shorof bahasa Arab santri Indonesia.</p>
+    </div>
+  </footer>
+
+  <!-- ==================== DIALOG & MODALS ==================== -->
+
+  <!-- 1. MODAL API SETTINGS -->
+  <div id="modal-api" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 space-y-4 shadow-xl border border-slate-100">
+      <div class="flex items-center justify-between">
+        <h3 class="text-md font-bold text-slate-800 flex items-center">
+          <i data-lucide="key-round" class="w-5 h-5 mr-2 text-emerald-600"></i>
+          Kunci API Gemini
+        </h3>
+        <button id="btn-close-api" class="text-slate-400 hover:text-slate-600">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <p class="text-xs text-slate-500 leading-relaxed">
+        Kunci API digunakan untuk terhubung dengan kecerdasan buatan Gemini secara langsung dari browser Anda untuk melakukan pencarian dan analisis shorof online.
+      </p>
+      <div class="space-y-1">
+        <label class="text-xs font-semibold text-slate-600">Gemini API Key</label>
+        <input 
+          type="password" 
+          id="api-key-input" 
+          placeholder="AIzaSy..." 
+          class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+        >
+      </div>
+      <div class="flex items-center justify-end space-x-2 pt-2">
+        <button id="btn-save-api" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-xl text-xs font-semibold transition-all">
+          Simpan Kunci API
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. MODAL IMPORT TXT -->
+  <div id="modal-import" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-xl border border-slate-100">
+      <div class="flex items-center justify-between">
+        <h3 class="text-md font-bold text-slate-800 flex items-center">
+          <i data-lucide="file-plus-2" class="w-5 h-5 mr-2 text-emerald-600"></i>
+          Impor Kosakata Offline
+        </h3>
+        <button id="btn-close-import" class="text-slate-400 hover:text-slate-600">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- File Upload & Manual Area -->
+      <div class="space-y-3 text-sm">
+        <div class="border-2 border-dashed border-slate-200 rounded-xl p-4 text-center hover:border-emerald-500/50 transition-all cursor-pointer relative">
+          <input type="file" id="file-input-txt" accept=".txt" class="absolute inset-0 opacity-0 cursor-pointer">
+          <i data-lucide="upload-cloud" class="w-8 h-8 text-emerald-600 mx-auto mb-2"></i>
+          <p class="font-semibold text-xs text-slate-700">Pilih Berkas berkode .txt</p>
+          <p class="text-[10px] text-slate-400">Atau seret berkas Anda ke sini</p>
+        </div>
+
+        <div class="text-center text-xs text-slate-400 font-medium">ATAU SALIN & TEMPEL DI BAWAH</div>
+
+        <div class="space-y-1">
+          <textarea 
+            id="text-import-area" 
+            rows="5" 
+            placeholder="Tulis kata kerja per baris, contoh:&#10;كَتَبَ&#10;أَكْرَمَ&#10;اِسْتَخْرَجَ" 
+            class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 arabic-font text-right text-lg"
+          ></textarea>
+        </div>
+
+        <!-- Format Instruction -->
+        <div class="bg-stone-50 border border-emerald-100 rounded-xl p-3 text-[11px] text-slate-500 leading-relaxed space-y-1">
+          <span class="font-bold text-emerald-800 block">Panduan Format TXT Terbuka:</span>
+          <p>Cukup masukkan kata kerja dasar <strong class="arabic-font text-sm">فِعْل مَاضِي</strong> per baris. Sistem AI kami akan otomatis menyusun bentuk Mudhari, Masdar, Amr, Maf'ul, serta jenis Tsulasi Mazid dan rujukan klasik Al-Munjid secara komprehensif!</p>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-end space-x-2 pt-2 border-t border-slate-100">
+        <button id="btn-execute-import" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center space-x-2 shadow-md">
+          <i data-lucide="download" class="w-4 h-4"></i>
+          <span>Mulai Proses Impor ke Memori</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. MODAL MEMORI (HIJAIYAH FILTER PANEL) -->
+  <div id="modal-memory-panel" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-40 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl border border-slate-100 overflow-hidden">
+      <!-- Modal Header -->
+      <div class="bg-gradient-to-r from-emerald-900 to-emerald-850 p-4 text-white flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="library" class="w-5 h-5 text-emerald-300"></i>
+          <h3 class="font-bold text-sm tracking-wide">Penjelajah Memori Kata</h3>
+        </div>
+        <button id="btn-close-memory-panel" class="text-emerald-200 hover:text-white transition-all">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Hijaiyah Grid Area -->
+      <div class="p-4 bg-stone-50 border-b border-slate-100 space-y-2">
+        <span class="text-xs font-bold text-slate-500 uppercase tracking-wider block">Filter Abjad Hijaiyah:</span>
+        <div id="hijaiyah-grid" class="grid grid-cols-7 sm:grid-cols-10 gap-1 text-center">
+          <!-- Hijaiyah letter buttons will be generated by JS -->
+        </div>
+      </div>
+
+      <!-- Filtered Words Area -->
+      <div class="flex-grow overflow-y-auto p-4 space-y-3">
+        <div class="flex items-center justify-between">
+          <span id="active-filter-label" class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-100">
+            Menampilkan Semua Kata
+          </span>
+          <span id="filtered-count" class="text-xs text-slate-400">0 Kata</span>
+        </div>
+
+        <div id="filtered-words-list" class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          <!-- Filtered words button pills will appear here -->
+        </div>
+
+        <div id="filtered-empty" class="hidden text-center py-12 space-y-2">
+          <i data-lucide="alert-circle" class="w-8 h-8 text-slate-300 mx-auto"></i>
+          <p class="text-xs text-slate-400">Tidak ada kata yang terdaftar di bawah huruf ini.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. MODAL DETAIL RUJUKAN SHOROF (Drawer) -->
+  <div id="modal-detail" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] flex flex-col shadow-2xl border border-slate-100 overflow-hidden">
+      <!-- Header -->
+      <div class="bg-gradient-to-r from-emerald-950 to-emerald-850 p-4 text-white flex items-center justify-between">
+        <span class="text-xs font-semibold tracking-wider text-emerald-300 uppercase">Detail Klasifikasi & Tasrif</span>
+        <button id="btn-close-detail" class="text-emerald-200 hover:text-white">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Scrollable Content -->
+      <div id="detail-content" class="flex-grow overflow-y-auto p-6 space-y-6">
+        
+        <!-- Arabic Main Display & Meaning -->
+        <div class="text-center space-y-2 pb-4 border-b border-slate-100">
+          <h2 id="detail-madhi" class="arabic-font text-5xl text-emerald-900 font-bold leading-normal">-</h2>
+          <div class="flex flex-wrap justify-center gap-2 mt-2">
+            <span id="detail-badge-klasifikasi" class="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full uppercase">-</span>
+            <span id="detail-badge-bina" class="text-[10px] font-bold bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full uppercase">-</span>
+            <span id="detail-badge-bab" class="text-[10px] font-bold bg-blue-100 text-blue-800 px-2.5 py-1 rounded-full uppercase">-</span>
+          </div>
+          <p id="detail-arti" class="text-md font-medium text-slate-600 italic mt-2">"-"</p>
+        </div>
+
+        <!-- Sharaf Conjugation Grid -->
+        <div class="space-y-2">
+          <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center">
+            <i data-lucide="git-merge" class="w-4 h-4 mr-1 text-emerald-600"></i>
+            Wazan & Konjugasi Shorof Istilahi
+          </h4>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div class="bg-stone-50 p-2.5 rounded-xl border border-slate-200/60 text-center">
+              <span class="text-[10px] text-slate-400 font-bold uppercase block">Fi'il Madhi</span>
+              <span id="field-madhi" class="arabic-font text-xl text-slate-800 font-bold block mt-1">-</span>
+            </div>
+            <div class="bg-stone-50 p-2.5 rounded-xl border border-slate-200/60 text-center">
+              <span class="text-[10px] text-slate-400 font-bold uppercase block">Fi'il Mudhari</span>
+              <span id="field-mudhari" class="arabic-font text-xl text-slate-800 font-bold block mt-1">-</span>
+            </div>
+            <div class="bg-stone-50 p-2.5 rounded-xl border border-slate-200/60 text-center">
+              <span class="text-[10px] text-slate-400 font-bold uppercase block">Masdar</span>
+              <span id="field-masdar" class="arabic-font text-xl text-slate-800 font-bold block mt-1">-</span>
+            </div>
+            <div class="bg-stone-50 p-2.5 rounded-xl border border-slate-200/60 text-center">
+              <span class="text-[10px] text-slate-400 font-bold uppercase block">Isim Fa'il</span>
+              <span id="field-fail" class="arabic-font text-xl text-slate-800 font-bold block mt-1">-</span>
+            </div>
+            <div class="bg-stone-50 p-2.5 rounded-xl border border-slate-200/60 text-center">
+              <span class="text-[10px] text-slate-400 font-bold uppercase block">Isim Maf'ul</span>
+              <span id="field-maful" class="arabic-font text-xl text-slate-800 font-bold block mt-1">-</span>
+            </div>
+            <div class="bg-stone-50 p-2.5 rounded-xl border border-slate-200/60 text-center">
+              <span class="text-[10px] text-slate-400 font-bold uppercase block">Fi'il Amr</span>
+              <span id="field-amr" class="arabic-font text-xl text-slate-800 font-bold block mt-1">-</span>
+            </div>
+            <div class="bg-stone-50 p-2.5 rounded-xl border border-slate-200/60 text-center col-span-2 sm:col-span-3">
+              <span class="text-[10px] text-slate-400 font-bold uppercase block">Isim Zaman & Makan</span>
+              <span id="field-zaman" class="arabic-font text-lg text-slate-800 font-bold block mt-1">-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Examples & References -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+          <!-- Usage Example -->
+          <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-2">
+            <h5 class="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center">
+              <i data-lucide="pen-tool" class="w-3.5 h-3.5 mr-1 text-emerald-600"></i>
+              Contoh Penggunaan
+            </h5>
+            <p id="detail-contoh-arab" class="arabic-font text-right text-lg text-slate-800 font-bold leading-relaxed">-</p>
+            <p id="detail-contoh-arti" class="text-xs text-slate-500 italic">-</p>
+          </div>
+
+          <!-- Munjid Classic Notes -->
+          <div class="bg-emerald-50/40 p-4 rounded-2xl border border-emerald-100 space-y-2">
+            <h5 class="text-xs font-bold text-emerald-800 uppercase tracking-wider flex items-center">
+              <i data-lucide="scroll" class="w-3.5 h-3.5 mr-1 text-emerald-700"></i>
+              Catatan Kitab Al-Munjid
+            </h5>
+            <p id="detail-munjid" class="text-xs text-slate-600 leading-relaxed italic">
+              -
+            </p>
+          </div>
+        </div>
+
+        <!-- Unhydrated Prompt Banner -->
+        <div id="ai-hydrate-banner" class="hidden bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-4 text-center space-y-3">
+          <div class="flex items-center justify-center space-x-2 text-amber-800">
+            <i data-lucide="sparkles" class="w-5 h-5 animate-pulse"></i>
+            <span class="text-xs font-bold">Kata ini Belum Dilengkapi Analisis Morfologi</span>
+          </div>
+          <p class="text-[11px] text-slate-500 max-w-md mx-auto">
+            Gunakan AI untuk melacak bentuk konjugasi, klasifikasi Rubai/Khumasi/Sudasi, Bina', Bab tasrif, dan rujukan Al-Munjid secara instan.
+          </p>
+          <button id="btn-hydrate-ai" class="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-md flex items-center space-x-2 mx-auto animate-bounce">
+            <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+            <span>Lengkapi Sekarang dengan AI</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-container" class="fixed bottom-4 right-4 z-50 space-y-2 pointer-events-none"></div>
+
+  <!-- 6. CUSTOM MODAL CONFIRM (Instead of browser confirm) -->
+  <div id="modal-confirm" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-55 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 space-y-4 shadow-2xl text-center border border-slate-100">
+      <div class="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto text-red-600">
+        <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+      </div>
+      <div class="space-y-1">
+        <h3 class="text-md font-bold text-slate-800" id="confirm-title">Konfirmasi Hapus</h3>
+        <p class="text-xs text-slate-500" id="confirm-message">Apakah Anda yakin ingin menghapus semua kosakata dari memori?</p>
+      </div>
+      <div class="flex items-center justify-center space-x-3 pt-2">
+        <button id="btn-confirm-cancel" class="bg-slate-100 hover:bg-slate-200 text-slate-600 px-4 py-2 rounded-xl text-xs font-semibold transition-all">
+          Batal
+        </button>
+        <button id="btn-confirm-ok" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl text-xs font-semibold transition-all shadow-md">
+          Hapus Semua
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== LOGIKA CORE JAVASCRIPT ==================== -->
+  <script>
+    // --- STAGE 1: GLOBAL VARIABLES & INITIALIZATION ---
+    let dbWords = [];
+    const appId = typeof __app_id !== 'undefined' ? __app_id : 'al-qomus-offline-shorof';
+    let apiKey = localStorage.getItem('gemini_api_key') || "";
+    let selectedWordForDetail = null;
+    let activeHijaiyahFilter = null;
+
+    // List Huruf Hijaiyah untuk Filter
+    const LIST_HIJAIYAH = [
+      "ا", "ب", "ت", "ث", "ج", "ح", "خ", "د", "ذ", "ر", "ز", "س", "ش", "ص", 
+      "ض", "ط", "ظ", "ع", "غ", "ف", "ق", "ك", "ل", "م", "ن", "هـ", "و", "ي"
+    ];
+
+    // --- STAGE 2: DOM ELEMENT SELECTORS ---
+    const dom = {
+      memoryCounter: document.getElementById('memory-counter'),
+      btnClearAll: document.getElementById('btn-clear-all'),
+      searchBar: document.getElementById('search-input'),
+      searchResultsSection: document.getElementById('search-results-section'),
+      searchCardsContainer: document.getElementById('search-cards-container'),
+      searchCount: document.getElementById('search-count'),
+      emptyStateBanner: document.getElementById('empty-state-banner'),
+      
+      // Modals
+      modalApi: document.getElementById('modal-api'),
+      btnOpenApi: document.getElementById('btn-api-settings'),
+      btnCloseApi: document.getElementById('btn-close-api'),
+      btnSaveApi: document.getElementById('btn-save-api'),
+      apiKeyInput: document.getElementById('api-key-input'),
+
+      modalImport: document.getElementById('modal-import'),
+      btnOpenImport: document.getElementById('btn-open-import'),
+      btnCloseImport: document.getElementById('btn-close-import'),
+      btnExecuteImport: document.getElementById('btn-execute-import'),
+      textImportArea: document.getElementById('text-import-area'),
+      fileInputTxt: document.getElementById('file-input-txt'),
+
+      modalMemoryPanel: document.getElementById('modal-memory-panel'),
+      btnMemory: document.getElementById('btn-memory'),
+      btnCloseMemoryPanel: document.getElementById('btn-close-memory-panel'),
+      hijaiyahGrid: document.getElementById('hijaiyah-grid'),
+      activeFilterLabel: document.getElementById('active-filter-label'),
+      filteredCount: document.getElementById('filtered-count'),
+      filteredWordsList: document.getElementById('filtered-words-list'),
+      filteredEmpty: document.getElementById('filtered-empty'),
+
+      modalDetail: document.getElementById('modal-detail'),
+      btnCloseDetail: document.getElementById('btn-close-detail'),
+      detailMadhi: document.getElementById('detail-madhi'),
+      detailBadgeKlasifikasi: document.getElementById('detail-badge-klasifikasi'),
+      detailBadgeBina: document.getElementById('detail-badge-bina'),
+      detailBadgeBab: document.getElementById('detail-badge-bab'),
+      detailArti: document.getElementById('detail-arti'),
+      
+      fieldMadhi: document.getElementById('field-madhi'),
+      fieldMudhari: document.getElementById('field-mudhari'),
+      fieldMasdar: document.getElementById('field-masdar'),
+      fieldFail: document.getElementById('field-fail'),
+      fieldMaful: document.getElementById('field-maful'),
+      fieldAmr: document.getElementById('field-amr'),
+      fieldZaman: document.getElementById('field-zaman'),
+      detailContohArab: document.getElementById('detail-contoh-arab'),
+      detailContohArti: document.getElementById('detail-contoh-arti'),
+      detailMunjid: document.getElementById('detail-munjid'),
+      aiHydrateBanner: document.getElementById('ai-hydrate-banner'),
+      btnHydrateAi: document.getElementById('btn-hydrate-ai'),
+
+      // Confirmation Modal
+      modalConfirm: document.getElementById('modal-confirm'),
+      btnConfirmCancel: document.getElementById('btn-confirm-cancel'),
+      btnConfirmOk: document.getElementById('btn-confirm-ok'),
+      confirmTitle: document.getElementById('confirm-title'),
+      confirmMessage: document.getElementById('confirm-message')
+    };
+
+    // --- STAGE 3: DATA ENGINE (LOCALSTORAGE OFFLINE FIRST) ---
+    function loadDatabase() {
+      const stored = localStorage.getItem(`${appId}_vocabulary_v2`);
+      if (stored) {
+        try {
+          dbWords = JSON.parse(stored);
+        } catch (e) {
+          dbWords = [];
+        }
+      } else {
+        dbWords = [];
+      }
+      updateUIState();
+    }
+
+    function saveDatabase() {
+      localStorage.setItem(`${appId}_vocabulary_v2`, JSON.stringify(dbWords));
+      updateUIState();
+    }
+
+    function updateUIState() {
+      const count = dbWords.length;
+      dom.memoryCounter.textContent = count;
+
+      if (count === 0 && dom.searchBar.value.trim() === '') {
+        dom.emptyStateBanner.classList.remove('hidden');
+        dom.searchResultsSection.classList.add('hidden');
+      } else {
+        dom.emptyStateBanner.classList.add('hidden');
+      }
+    }
+
+    // --- STAGE 4: TOAST NOTIFICATIONS (NO BROWSER ALERTS) ---
+    function showToast(message, type = 'success') {
+      // Remove previous toasts to prevent stacking
+      const container = document.getElementById('toast-container');
+      container.innerHTML = '';
+
+      const toast = document.createElement('div');
+      toast.className = `flex items-center space-x-2 p-3.5 rounded-xl shadow-lg border text-xs font-semibold transform translate-y-2 opacity-0 transition-all duration-300 pointer-events-auto max-w-sm ${
+        type === 'success' 
+          ? 'bg-emerald-950 text-emerald-100 border-emerald-800' 
+          : type === 'error' 
+          ? 'bg-red-950 text-red-100 border-red-800' 
+          : 'bg-amber-950 text-amber-100 border-amber-800'
+      }`;
+      
+      const icon = type === 'success' ? 'check-circle' : type === 'error' ? 'alert-triangle' : 'info';
+      toast.innerHTML = `<i data-lucide="${icon}" class="w-4 h-4"></i><span>${message}</span>`;
+      
+      container.appendChild(toast);
+      lucide.createIcons();
+
+      // Trigger transition
+      setTimeout(() => {
+        toast.classList.remove('opacity-0', 'translate-y-2');
+      }, 50);
+
+      // Dismiss timer
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 4500);
+    }
+
+    // --- STAGE 5: CUSTOM CONFIRMATION WINDOW ---
+    let confirmCallback = null;
+    function openConfirm(title, message, callback) {
+      dom.confirmTitle.textContent = title;
+      dom.confirmMessage.textContent = message;
+      confirmCallback = callback;
+      dom.modalConfirm.classList.remove('hidden');
+    }
+
+    dom.btnConfirmCancel.onclick = () => {
+      dom.modalConfirm.classList.add('hidden');
+      confirmCallback = null;
+    };
+
+    dom.btnConfirmOk.onclick = () => {
+      dom.modalConfirm.classList.add('hidden');
+      if (confirmCallback) confirmCallback();
+      confirmCallback = null;
+    };
+
+    // --- STAGE 6: EXHAUSTIVE ARABIC MORPHOLOGY UTILS ---
+    function removeDiacritics(text) {
+      if (!text) return '';
+      return text.replace(/[\u064B-\u0652]/g, "");
+    }
+
+    function getArabicFirstLetter(word) {
+      let cleaned = removeDiacritics(word).trim();
+      if (cleaned.startsWith('ال')) {
+        cleaned = cleaned.substring(2);
+      }
+      if (!cleaned) return '';
+      let firstChar = cleaned.charAt(0);
+      if (['أ', 'إ', 'آ', 'ء'].includes(firstChar)) {
+        return 'ا';
+      }
+      return firstChar;
+    }
+
+    // --- STAGE 7: TEXT IMPORT CONTROLLER (TXT) ---
+    dom.fileInputTxt.onchange = (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        dom.textImportArea.value = evt.target.result;
+        showToast("Berkas berhasil dibaca! Tekan tombol Impor untuk menyimpan.", "success");
+      };
+      reader.readAsText(file);
+    };
+
+    dom.btnExecuteImport.onclick = () => {
+      const text = dom.textImportArea.value.trim();
+      if (!text) {
+        showToast("Masukkan teks kosa kata terlebih dahulu!", "warning");
+        return;
+      }
+
+      const lines = text.split('\n');
+      let importCount = 0;
+
+      lines.forEach(line => {
+        const rawWord = line.trim();
+        if (!rawWord) return;
+
+        const tokens = rawWord.split(/\s+/);
+        const madhi = tokens[0];
+
+        const exists = dbWords.some(w => removeDiacritics(w.madhi) === removeDiacritics(madhi));
+        if (!exists) {
+          dbWords.push({
+            id: crypto.randomUUID(),
+            madhi: madhi,
+            mudhari: '-',
+            masdar: '-',
+            fail: '-',
+            maful: '-',
+            amr: '-',
+            zaman_makan: '-',
+            arti: 'Menunggu Tasrif AI Online...',
+            klasifikasi: 'Belum di-tasrif',
+            bina: 'Belum di-tasrif',
+            bab: 'Belum di-tasrif',
+            contoh: '-',
+            contoh_arti: '-',
+            munjid: 'Menunggu analisis Gemini AI.',
+            hydrated: false
+          });
+          importCount++;
+        }
+      });
+
+      if (importCount > 0) {
+        saveDatabase();
+        showToast(`Berhasil mengimpor ${importCount} kata baru ke memori!`, "success");
+        dom.textImportArea.value = '';
+        dom.modalImport.classList.add('hidden');
+        renderSearchResults();
+      } else {
+        showToast("Tidak ada kosakata baru yang unik untuk diimpor.", "info");
+      }
+    };
+
+    // --- STAGE 8: EXPONENTIAL BACKOFF GEMINI API CONNECTIVITY ---
+    async function fetchGeminiWithBackoff(promptText, systemPrompt, retries = 5, delay = 1000) {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+      const payload = {
+        contents: [{ parts: [{ text: promptText }] }],
+        systemInstruction: { parts: [{ text: systemPrompt }] },
+        generationConfig: {
+          responseMimeType: "application/json",
+          responseSchema: {
+            type: "OBJECT",
+            properties: {
+              madhi: { type: "STRING" },
+              mudhari: { type: "STRING" },
+              masdar: { type: "STRING" },
+              fail: { type: "STRING" },
+              maful: { type: "STRING" },
+              amr: { type: "STRING" },
+              zaman_makan: { type: "STRING" },
+              arti: { type: "STRING" },
+              klasifikasi: { type: "STRING" },
+              bina: { type: "STRING" },
+              bab: { type: "STRING" },
+              contoh: { type: "STRING" },
+              contoh_arti: { type: "STRING" },
+              munjid: { type: "STRING" }
+            },
+            required: ["madhi", "mudhari", "masdar", "fail", "maful", "amr", "zaman_makan", "arti", "klasifikasi", "bina", "bab", "contoh", "contoh_arti", "munjid"]
+          }
+        }
+      };
+
+      for (let i = 0; i < retries; i++) {
+        try {
+          const response = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          if (response.ok) {
+            const data = await response.json();
+            return data;
+          }
+        } catch (e) {
+          // Failure handled by retry loop
+        }
+        await new Promise(res => setTimeout(res, delay));
+        delay *= 2;
+      }
+      throw new Error("Gagal terhubung dengan server Gemini API setelah beberapa percobaan. Periksa koneksi internet dan validitas API Key.");
+    }
+
+    // --- STAGE 9: ONLINE SEARCH & HYDRATION ENGINE (INTEGRATED) ---
+    async function executeOnlineAISearch(targetWord) {
+      if (!apiKey) {
+        showToast("Kunci API Gemini kosong! Silakan masukkan kunci API Anda di menu pengaturan.", "warning");
+        dom.modalApi.classList.remove('hidden');
+        return;
+      }
+
+      showToast(`Menghubungkan AI untuk menganalisis "${targetWord}"...`, "info");
+
+      const systemPrompt = `Anda adalah pakar linguistik bahasa Arab, sastra Arab klasik, dan ilmu Sharaf (morfologi). Tugas Anda adalah menganalisis kata kerja (Fi'il Madhi) yang diberikan secara presisi dan ilmiah.
+Wajib penuhi aturan gramatika klasik ini:
+1. Klasifikasi: Tentukan secara tepat apakah kata ini termasuk "Tsulasi Mujarrad", "Tsulasi Mazid Rubai", "Tsulasi Mazid Khumasi", atau "Tsulasi Mazid Sudasi".
+2. Bina': Identifikasi jenis Bina' dari kata tersebut (contoh: "Shahih Salim", "Mudha'af", "Mahmuz Fa/Ain/Lam", "Mitsal Wawi/Yai", "Ajwaf Wawi/Yai", "Naqis Wawi/Yai", "Lafif Maqrun", atau "Lafif Mafruq").
+3. Bab Tasrif: Berikan nama Bab tasrif yang sesuai (contoh untuk mujarrad: "Bab 1 (فَعَلَ - يَفْعُلُ)", atau jika Mazid sebutkan polanya/wazan-nya secara eksplisit contoh: "Bab 1 Mazid - أَفْعَلَ يُفْعِلُ").
+4. Harakat: Berikan harakat lengkap dan akurat di semua kosakata Arab (madhi, mudhari, masdar, fail, maful, amr, zaman_makan, contoh).
+5. Arti: Terjemahkan ke Bahasa Indonesia yang lugas dan tepat.
+6. Contoh: Berikan 1 contoh kalimat pendek fungsional berharakat, beserta arti Bahasa Indonesianya.
+7. Al-Munjid: Berikan ringkasan penjelasan atau analisis akar kata (filologi) yang bersumber atau berpatokan pada kamus besar Al-Munjid karya Luwis Ma'luf.`;
+
+      const promptText = `Lakukan analisis gramatika shorof komprehensif untuk kata Fi'il Madhi berikut: "${targetWord}". Lengkapilah seluruh skema JSON yang diminta dengan harakat yang sangat akurat.`;
+
+      try {
+        const result = await fetchGeminiWithBackoff(promptText, systemPrompt);
+        const textResponse = result.candidates?.[0]?.content?.parts?.[0]?.text;
+
+        if (!textResponse) {
+          throw new Error("Respons dari AI kosong atau tidak sesuai format.");
+        }
+
+        const data = JSON.parse(textResponse);
+
+        // Ambil data atau buat data baru di lokal jika belum ada
+        const existingIndex = dbWords.findIndex(w => removeDiacritics(w.madhi) === removeDiacritics(targetWord));
+        
+        const structuredItem = {
+          id: existingIndex !== -1 ? dbWords[existingIndex].id : crypto.randomUUID(),
+          madhi: data.madhi || targetWord,
+          mudhari: data.mudhari || '-',
+          masdar: data.masdar || '-',
+          fail: data.fail || '-',
+          maful: data.maful || '-',
+          amr: data.amr || '-',
+          zaman_makan: data.zaman_makan || '-',
+          arti: data.arti || 'Tidak terdefinisi',
+          klasifikasi: data.klasifikasi || 'Tsulasi Mujarrad',
+          bina: data.bina || 'Shahih Salim',
+          bab: data.bab || '-',
+          contoh: data.contoh || '-',
+          contoh_arti: data.contoh_arti || '-',
+          munjid: data.munjid || '-',
+          hydrated: true
+        };
+
+        if (existingIndex !== -1) {
+          dbWords[existingIndex] = structuredItem;
+        } else {
+          dbWords.push(structuredItem);
+        }
+
+        saveDatabase();
+        showToast(`Kata "${data.madhi}" berhasil ditasrif & disimpan di memori!`, "success");
+        
+        // Bersihkan input pencarian untuk merefresh visualisasi
+        dom.searchBar.value = data.madhi;
+        renderSearchResults();
+        
+        // Langsung buka modal detail kata
+        openWordDetail(structuredItem);
+
+      } catch (err) {
+        showToast(err.message, "error");
+      }
+    }
+
+    // --- STAGE 10: LOCAL & AI HYBRID SEARCH ENGINE ---
+    dom.searchBar.oninput = () => {
+      renderSearchResults();
+    };
+
+    function renderSearchResults() {
+      const query = dom.searchBar.value.trim();
+      if (!query) {
+        dom.searchResultsSection.classList.add('hidden');
+        updateUIState();
+        return;
+      }
+
+      dom.searchResultsSection.classList.remove('hidden');
+      dom.emptyStateBanner.classList.add('hidden');
+      dom.searchCardsContainer.innerHTML = '';
+
+      const cleanedQuery = removeDiacritics(query).toLowerCase();
+
+      // Cari lokal di database terlebih dahulu
+      const filtered = dbWords.filter(w => {
+        const mClean = removeDiacritics(w.madhi).toLowerCase();
+        const aClean = w.arti.toLowerCase();
+        return mClean.includes(cleanedQuery) || aClean.includes(query.toLowerCase());
+      });
+
+      dom.searchCount.textContent = `${filtered.length} ditemukan di memori`;
+
+      // Render hasil pencarian lokal jika ada
+      filtered.forEach(item => {
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-2xl p-4 shadow-sm border border-slate-100 hover:border-emerald-500/40 transition-all cursor-pointer flex flex-col justify-between space-y-3";
+        card.onclick = () => openWordDetail(item);
+
+        card.innerHTML = `
+          <div class="flex items-start justify-between">
+            <div>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-100">
+                ${item.klasifikasi || 'Belum di-tasrif'}
+              </span>
+            </div>
+            <span class="arabic-font text-3xl font-bold text-emerald-950 text-right">${item.madhi}</span>
+          </div>
+          <div class="border-t border-slate-100 pt-2 flex items-center justify-between text-xs text-slate-400">
+            <span class="italic max-w-[70%] truncate">"${item.arti}"</span>
+            <span class="flex items-center text-emerald-600 font-semibold text-[11px]">
+              Detail <i data-lucide="chevron-right" class="w-3.5 h-3.5 ml-0.5"></i>
+            </span>
+          </div>
+        `;
+        dom.searchCardsContainer.appendChild(card);
+      });
+
+      // SELALU TAMPILKAN opsi pencarian AI Online di bagian paling bawah / terpisah jika pengguna sedang mencari
+      const aiSearchCard = document.createElement('div');
+      aiSearchCard.className = "col-span-full bg-gradient-to-br from-emerald-900 to-emerald-950 text-white rounded-2xl p-5 shadow-md border border-emerald-800 flex flex-col sm:flex-row items-center justify-between gap-4 mt-2";
+      aiSearchCard.innerHTML = `
+        <div class="space-y-1 text-center sm:text-left">
+          <h4 class="text-xs font-bold text-emerald-300 uppercase tracking-wider flex items-center justify-center sm:justify-start">
+            <i data-lucide="sparkles" class="w-4 h-4 mr-1.5 text-emerald-400 animate-pulse"></i>
+            Pencarian Shorof AI Online
+          </h4>
+          <p class="text-xs text-emerald-100/80 leading-relaxed">
+            Ingin mencari kata <strong class="arabic-font text-sm text-white">"${query}"</strong> secara online menggunakan AI lengkap dengan rujukan Al-Munjid?
+          </p>
+        </div>
+        <button id="btn-search-ai-online" class="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white px-5 py-2.5 rounded-xl font-bold text-xs shadow-md transition-all flex items-center justify-center space-x-2">
+          <i data-lucide="search" class="w-4 h-4"></i>
+          <span>Cari Online via AI</span>
+        </button>
+      `;
+      dom.searchCardsContainer.appendChild(aiSearchCard);
+
+      // Event Listener khusus untuk tombol pencarian AI Online
+      document.getElementById('btn-search-ai-online').onclick = () => {
+        executeOnlineAISearch(query);
+      };
+
+      lucide.createIcons();
+    }
+
+    // --- STAGE 11: MEMORY EXPLORER (HIJAIYAH NAVIGATION) ---
+    function renderMemoryPanelWords() {
+      dom.filteredWordsList.innerHTML = '';
+      
+      const words = activeHijaiyahFilter 
+        ? dbWords.filter(w => getArabicFirstLetter(w.madhi) === activeHijaiyahFilter)
+        : dbWords;
+
+      dom.filteredCount.textContent = `${words.length} Kata`;
+
+      if (activeHijaiyahFilter) {
+        dom.activeFilterLabel.textContent = `Huruf Terpilih: ${activeHijaiyahFilter}`;
+      } else {
+        dom.activeFilterLabel.textContent = "Menampilkan Semua Kata";
+      }
+
+      if (words.length === 0) {
+        dom.filteredEmpty.classList.remove('hidden');
+        return;
+      }
+
+      dom.filteredEmpty.classList.add('hidden');
+      words.forEach(item => {
+        const btn = document.createElement('button');
+        btn.className = "bg-white p-3.5 rounded-xl border border-slate-200/60 hover:border-emerald-600 hover:text-emerald-800 transition-all text-center flex flex-col items-center justify-center space-y-1";
+        btn.onclick = () => {
+          dom.modalMemoryPanel.classList.add('hidden');
+          openWordDetail(item);
+        };
+
+        btn.innerHTML = `
+          <span class="arabic-font text-2xl font-bold leading-none text-emerald-950">${item.madhi}</span>
+          <span class="text-[10px] text-slate-400 truncate max-w-full">${item.arti}</span>
+        `;
+        dom.filteredWordsList.appendChild(btn);
+      });
+    }
+
+    function initHijaiyahFilters() {
+      dom.hijaiyahGrid.innerHTML = '';
+      
+      // Add 'All' Filter button
+      const allBtn = document.createElement('button');
+      allBtn.className = `p-1.5 rounded-lg text-xs font-bold transition-all border ${
+        activeHijaiyahFilter === null 
+          ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm' 
+          : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-100'
+      }`;
+      allBtn.textContent = 'Semua';
+      allBtn.onclick = () => {
+        activeHijaiyahFilter = null;
+        initHijaiyahFilters();
+        renderMemoryPanelWords();
+      };
+      dom.hijaiyahGrid.appendChild(allBtn);
+
+      // Create letters button
+      LIST_HIJAIYAH.forEach(letter => {
+        const exists = dbWords.some(w => getArabicFirstLetter(w.madhi) === letter);
+        
+        const btn = document.createElement('button');
+        btn.className = `p-1.5 rounded-lg text-sm font-bold transition-all border arabic-font ${
+          activeHijaiyahFilter === letter 
+            ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm' 
+            : exists 
+            ? 'bg-emerald-50 text-emerald-800 border-emerald-200 hover:bg-emerald-100/50' 
+            : 'bg-white text-slate-300 border-slate-100 cursor-not-allowed opacity-50'
+        }`;
+        btn.textContent = letter;
+        btn.disabled = !exists;
+        
+        btn.onclick = () => {
+          activeHijaiyahFilter = letter;
+          initHijaiyahFilters();
+          renderMemoryPanelWords();
+        };
+        dom.hijaiyahGrid.appendChild(btn);
+      });
+    }
+
+    // --- STAGE 12: DETAIL MODAL VIEW CONTROLLER ---
+    function openWordDetail(wordItem) {
+      selectedWordForDetail = wordItem;
+      
+      dom.detailMadhi.textContent = wordItem.madhi;
+      dom.detailArti.textContent = `"${wordItem.arti}"`;
+
+      // Badge classifications
+      dom.detailBadgeKlasifikasi.textContent = wordItem.klasifikasi || 'Belum ditasrif';
+      dom.detailBadgeBina.textContent = `Bina': ${wordItem.bina || 'Belum ditasrif'}`;
+      dom.detailBadgeBab.textContent = `Bab: ${wordItem.bab || 'Belum ditasrif'}`;
+
+      // Sharaf forms
+      dom.fieldMadhi.textContent = wordItem.madhi || '-';
+      dom.fieldMudhari.textContent = wordItem.mudhari || '-';
+      dom.fieldMasdar.textContent = wordItem.masdar || '-';
+      dom.fieldFail.textContent = wordItem.fail || '-';
+      dom.fieldMaful.textContent = wordItem.maful || '-';
+      dom.fieldAmr.textContent = wordItem.amr || '-';
+      dom.fieldZaman.textContent = wordItem.zaman_makan || '-';
+
+      // Usage & References
+      dom.detailContohArab.textContent = wordItem.contoh || '-';
+      dom.detailContohArti.textContent = wordItem.contoh_arti || '-';
+      dom.detailMunjid.textContent = wordItem.munjid || 'Catatan rujukan kitab klasik Al-Munjid kosong.';
+
+      // AI Hydration Banner
+      if (wordItem.hydrated) {
+        dom.aiHydrateBanner.classList.add('hidden');
+      } else {
+        dom.aiHydrateBanner.classList.remove('hidden');
+      }
+
+      dom.modalDetail.classList.remove('hidden');
+    }
+
+    dom.btnHydrateAi.onclick = () => {
+      if (selectedWordForDetail) {
+        executeOnlineAISearch(selectedWordForDetail.madhi);
+      }
+    };
+
+    // --- STAGE 13: UI EVENT LISTENERS & ROUTING ---
+    
+    // API Modal Handlers
+    dom.btnOpenApi.onclick = () => {
+      dom.apiKeyInput.value = apiKey;
+      dom.modalApi.classList.remove('hidden');
+    };
+    dom.btnCloseApi.onclick = () => dom.modalApi.classList.add('hidden');
+    dom.btnSaveApi.onclick = () => {
+      apiKey = dom.apiKeyInput.value.trim();
+      localStorage.setItem('gemini_api_key', apiKey);
+      showToast("Kunci API Gemini tersimpan secara aman di peramban!", "success");
+      dom.modalApi.classList.add('hidden');
+    };
+
+    // Import Modal Handlers
+    dom.btnOpenImport.onclick = () => dom.modalImport.classList.remove('hidden');
+    dom.btnCloseImport.onclick = () => dom.modalImport.classList.add('hidden');
+
+    // Memory Explorer Handlers
+    dom.btnMemory.onclick = () => {
+      initHijaiyahFilters();
+      renderMemoryPanelWords();
+      dom.modalMemoryPanel.classList.remove('hidden');
+    };
+    dom.btnCloseMemoryPanel.onclick = () => dom.modalMemoryPanel.classList.add('hidden');
+
+    // Detail Modal Close
+    dom.btnCloseDetail.onclick = () => {
+      dom.modalDetail.classList.add('hidden');
+      selectedWordForDetail = null;
+    };
+
+    // Danger Zone (Hapus Semua)
+    dom.btnClearAll.onclick = () => {
+      if (dbWords.length === 0) {
+        showToast("Memori kamus Anda memang sudah kosong.", "info");
+        return;
+      }
+      openConfirm(
+        "Hapus Seluruh Memori?",
+        `Tindakan ini akan menghapus ${dbWords.length} kosakata shorof secara permanen dari browser ini. Apakah Anda yakin?`,
+        () => {
+          dbWords = [];
+          saveDatabase();
+          showToast("Seluruh isi memori kamus berhasil dikosongkan secara permanen.", "success");
+          renderSearchResults();
+        }
+      );
+    };
+
+    // Outside Modal Clicks for seamless UX
+    window.onclick = (e) => {
+      if (e.target === dom.modalApi) dom.modalApi.classList.add('hidden');
+      if (e.target === dom.modalImport) dom.modalImport.classList.add('hidden');
+      if (e.target === dom.modalMemoryPanel) dom.modalMemoryPanel.classList.add('hidden');
+      if (e.target === dom.modalDetail) dom.modalDetail.classList.add('hidden');
+    };
+
+    // --- STAGE 14: WINDOW LOAD ENGINE ---
+    window.onload = function() {
+      loadDatabase();
+      lucide.createIcons();
+    };
+  </script>
+</body>
+</html>
+
+```
