@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -1311,7 +1310,14 @@ Jangan sertakan teks markup, markdown, pembuka, atau penutup apa pun selain JSON
       return result.candidates?.[0]?.content?.parts?.[0]?.text || "";
     }
   </script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js")
+      .then(() => console.log("Service Worker registered"))
+      .catch(err => console.log("SW registration failed:", err));
+  });
+}
+</script>
+</body>
 </body>
 </html>
-
-```
