@@ -1309,7 +1309,7 @@ Jangan sertakan teks markup, markdown, pembuka, atau penutup apa pun selain JSON
       const result = await response.json();
       return result.candidates?.[0]?.content?.parts?.[0]?.text || "";
     }
-</script>
+<script>
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("./sw.js")
