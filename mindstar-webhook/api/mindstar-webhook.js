@@ -1,7 +1,6 @@
 import crypto from 'crypto';
 
 export default async function handler(req, res) {
-  // 1. Cuma terima POST dari Midtrans
   if (req.method!== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -10,51 +9,46 @@ export default async function handler(req, res) {
     const notification = req.body;
     const SERVER_KEY = process.env.MIDTRANS_SERVER_KEY;
 
-    if (!SERVER_KEY) {
-      console.error('SERVER_KEY kosong bang');
-      return res.status(500).json({ error: 'Server error' });
-    }
-
-    // 2. Validasi signature biar gak dipalsu hacker
+    // 1. Validasi signature Midtrans
     const signature = crypto
-     .createHash('sha512')
-     .update(notification.order_id + notification.status_code + notification.gross_amount + SERVER_KEY)
-     .digest('hex');
+    .createHash('sha512')
+    .update(notification.order_id + notification.status_code + notification.gross_amount + SERVER_KEY)
+    .digest('hex');
 
     if (signature!== notification.signature_key) {
-      console.error('Signature salah:', notification.order_id);
       return res.status(403).json({ error: 'Invalid signature' });
     }
 
-    console.log('Notifikasi Midtrans masuk:', {
-      order_id: notification.order_id,
-      status: notification.transaction_status,
-      amount: notification.gross_amount
-    });
-
-    // 3. Ambil user_id dari order_id
-    // Format order_id wajib: premium-USER_ID-timestamp
-    // Contoh: premium-USER123-1699000123
     const order_id = notification.order_id;
     const transaction_status = notification.transaction_status;
     const user_id = order_id.split('-')[1];
 
-    // 4. LOGIKA BUKA PREMIUM - EDIT DI SINI
     if (transaction_status === 'settlement' || transaction_status === 'capture') {
-      console.log(`✅ User ${user_id} LUNAS. Buka premium!`);
+      console.log(`✅ User ${user_id} LUNAS`);
 
-      // TODO: Ganti ini pake database lu. Contoh pake Supabase/Firebase:
+      // 2. UPDATE DB PREMIUM - GANTI SESUAI DB LU
       // await supabase.from('users').update({ premium: true }).eq('id', user_id)
+      // Ambil onesignal_id dari DB juga
+      const user_onesignal_id = 'AMBIL_DARI_DB_LU'; // contoh: "abc-123-xyz"
 
-      console.log(`Database user ${user_id} udah diupdate jadi premium`);
+      // 3. KIRIM NOTIF ONESIGNAL
+      await fetch('https://onesignal.com/api/v1/notifications', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic ' + process.env.ONESIGNAL_REST_KEY
+        },
+        body: JSON.stringify({
+          app_id: process.env.ONESIGNAL_APP_ID,
+          include_player_ids: [user_onesignal_id],
+          headings: { en: 'ShorofApp Premium' },
+          contents: { en: 'Pembayaran berhasil! Fitur premium sudah aktif.' }
+        })
+      });
 
-    } else if (transaction_status === 'pending') {
-      console.log(`⏳ User ${user_id} masih pending bayar`);
-    } else if (transaction_status === 'expire' || transaction_status === 'cancel') {
-      console.log(`❌ User ${user_id} batal/expired`);
+      console.log(`Notif terkirim ke user ${user_id}`);
     }
 
-    // 5. WAJIB bales 200 ke Midtrans biar dia stop spam notif
     return res.status(200).json({ status: 'success' });
 
   } catch (error) {
