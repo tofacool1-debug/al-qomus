@@ -1,0 +1,10 @@
+{
+  "name": "mindstar-webhook",
+  "version": "1.0.0",
+  "description": "Webhook Midtrans untuk buka kunci Premium ShorofApp",
+  "main": "api/mindstar-webhook.js",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {}
+}
