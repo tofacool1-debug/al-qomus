@@ -1,0 +1,65 @@
+export default async function handler(req, res) {
+  if (req.method!== 'POST') {
+    return res.status(405).json({ error: 'Cuma terima POST' });
+  }
+
+  const { user_id, amount } = req.body; // amount = 50000 buat Rp50rb
+  const SERVER_KEY = process.env.MIDTRANS_SERVER_KEY;
+  const IS_PRODUCTION = process.env.NODE_ENV === 'production';
+
+  // URL Midtrans: Sandbox buat test, Production buat beneran
+  const MIDTRANS_URL = IS_PRODUCTION 
+    ? 'https://app.midtrans.com/snap/v1/transactions'
+    : 'https://app.sandbox.midtrans.com/snap/v1/transactions';
+
+  // Format order_id wajib unik biar webhook gampang baca
+  const order_id = `premium-${user_id}-${Date.now()}`;
+
+  const payload = {
+    transaction_details: {
+      order_id: order_id,
+      gross_amount: amount
+    },
+    customer_details: {
+      // Data dummy aja, bisa lu ambil dari app
+      first_name: `User ${user_id}`,
+      email: `${user_id}@mindstar.app`
+    },
+    item_details: [{
+      id: 'premium-shorof',
+      price: amount,
+      quantity: 1,
+      name: 'Premium ShorofApp 1 Bulan'
+    }]
+  };
+
+  try {
+    const response = await fetch(MIDTRANS_URL, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ' + Buffer.from(SERVER_KEY + ':').toString('base64')
+      },
+      body: JSON.stringify(payload)
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      // Kirim balik ke app: token + link bayar
+      return res.status(200).json({
+        token: data.token,
+        redirect_url: data.redirect_url,
+        order_id: order_id
+      });
+    } else {
+      console.error('Midtrans error:', data);
+      return res.status(500).json({ error: data });
+    }
+
+  } catch (error) {
+    console.error('Error:', error);
+    return res.status(500).json({ error: 'Gagal bikin invoice' });
+  }
+}
