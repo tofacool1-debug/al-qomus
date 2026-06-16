@@ -1,0 +1,1 @@
+shorof istilah wal lughowi
