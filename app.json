@@ -1,0 +1,46 @@
+{
+  "expo": {
+    "name": "Shorof Digital Pro",
+    "slug": "shorof-digital-pro",
+    "version": "2.0.0",
+    "orientation": "portrait",
+    "icon": "./public/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./public/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kamus.shorofiilal"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./public/icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.kamus.shorof.iilal font"
+    },
+    "web": {
+      "favicon": "./public/icon.png"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/71474c2a-503f-473b-97a8-bb87cd4b3e9e",
+      "fallbackToCacheTimeout": 5000,
+      "checkOnLaunch": "ALWAYS",
+      "enabled": true
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "71474c2a-503f-473b-97a8-bb87cd4b3e9e"
+      }
+    }
+  }
+}
