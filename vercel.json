@@ -1,14 +1,1 @@
-{
-  "env": {
-    "MIDTRANS_SERVER_KEY": "@midtrans_server_key",
-    "NEXT_PUBLIC_MIDTRANS_CLIENT_KEY": "@midtrans_client_key",
-    "ONESIGNAL_REST_API_KEY": "@onesignal_rest_api_key",
-    "NEXT_PUBLIC_ONESIGNAL_APP_ID": "@onesignal_app_id"
-  },
-  "functions": {
-    "pages/api/**/*.js": {
-      "memory": 1024,
-      "maxDuration": 30
-    }
-  }
-}
+{}
