@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline - Shorof Digital Pro</title>
+  <style>
+    body {
+      background: #0f172a;
+      color: #e2e8f0;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+      padding: 20px;
+    }
+    .icon {
+      font-size: 64px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      color: #10b981;
+      margin-bottom: 10px;
+    }
+    p {
+      opacity: 0.8;
+      max-width: 400px;
+      line-height: 1.6;
+    }
+    button {
+      margin-top: 30px;
+      padding: 12px 24px;
+      background: #10b981;
+      color: #0f172a;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="icon">📶❌</div>
+  <h1>Kamu Sedang Offline</h1>
+  <p>
+    Shorof Digital Pro butuh internet buat muat data baru. 
+    Tapi kamu masih bisa buka halaman + tasrif yang udah pernah dibuka sebelumnya.
+  </p>
+  <button onclick="window.location.reload()">Coba Lagi</button>
+</body>
+</html>

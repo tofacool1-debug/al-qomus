@@ -1,0 +1,170 @@
+[
+  {
+    "id": "fav-nasara",
+    "root": {
+      "fa": "ن",
+      "ain": "ص",
+      "lam": "ر"
+    },
+    "translation": "Menolong / Membantu",
+    "babNum": 1,
+    "notes": "Tersimpan otomatis di cloud database bawaan.",
+    "custom": false
+  },
+  {
+    "id": "fav-custom-sawana",
+    "root": {
+      "fa": "ص",
+      "ain": "و",
+      "lam": "ن"
+    },
+    "translation": "Memelihara / Menjaga / Melindungi",
+    "babNum": 1,
+    "notes": "Bina Ajwaf Wawi. Mengalami I'lal pemindahan harakah dan penggantian huruf menjadi Alif pada Madhi: صَوَنَ -> صَانَ, Mudhari: يَصْوُنُ -> يَصُونُ.",
+    "custom": true
+  },
+  {
+    "id": "fav-custom-ghazawa",
+    "root": {
+      "fa": "غ",
+      "ain": "ز",
+      "lam": "و"
+    },
+    "translation": "Berperang / Menyerbu / Menyerang",
+    "babNum": 1,
+    "notes": "Bina Naqis Wawi. Mengalami I'lal penggantian huruf di akhir menjadi Alif Tegak pada Madhi: غَزَوَ -> غَزَا, Mudhari: يَغْزُو.",
+    "custom": true
+  },
+  {
+    "id": "fav-custom-amala",
+    "root": {
+      "fa": "أ",
+      "ain": "م",
+      "lam": "ل"
+    },
+    "translation": "Berharap / Mendambakan / Mengangankan",
+    "babNum": 1,
+    "notes": "Bina Mahmuz Fa (أَمَلَ - يَأْمُلُ). Pola tasrif normal seperti Shohih, huruf hamzah berada di posisi Fa Fi'il.",
+    "custom": true
+  },
+  {
+    "id": "fav-custom-farra",
+    "root": {
+      "fa": "ف",
+      "ain": "ر",
+      "lam": "ر"
+    },
+    "translation": "Berlari / Kabur / Melarikan diri",
+    "babNum": 2,
+    "notes": "Bina Mudho'af. Mengalami Idgham (peleburan): فَرَرَ -> فَرَّ, Mudhari: يَفْرِرُ -> يَفِرُّ. Tasydid diurai dari dhomir Hunna ke bawah.",
+    "custom": true
+  },
+  {
+    "id": "fav-custom-waada",
+    "root": {
+      "fa": "و",
+      "ain": "ع",
+      "lam": "د"
+    },
+    "translation": "Berjanji / Mengancam",
+    "babNum": 2,
+    "notes": "Bina Mitsal Wawi. Huruf penyakit Waw dibuang pada bentuk Mudhari karena berada di antara Fatha dan Kasra: يَوْعِدُ -> يَعِدُ.",
+    "custom": true
+  },
+  {
+    "id": "fav-custom-yasara",
+    "root": {
+      "fa": "ي",
+      "ain": "س",
+      "lam": "ر"
+    },
+    "translation": "Menjadi Mudah / Gampang",
+    "babNum": 2,
+    "notes": "Bina Mitsal Ya'i. Huruf penyakit Ya' tetap tampak pada bentuk Mudhari: يَيسِرُ -> يَيْسِرُ.",
+    "custom": true
+  },
+  {
+    "id": "fav-custom-sayara",
+    "root": {
+      "fa": "س",
+      "ain": "ي",
+      "lam": "ر"
+    },
+    "translation": "Berjalan / Melakukan Perjalanan",
+    "babNum": 2,
+    "notes": "Bina Ajwaf Ya'i. Mengalami I'lal penggantian huruf menjadi Alif pada Madhi: سَيَرَ -> سَارَ, dan Mudhari: يَسْيِرُ -> يَسِيرُ.",
+    "custom": true
+  },
+  {
+    "id": "fav-custom-saraya",
+    "root": {
+      "fa": "س",
+      "ain": "ر",
+      "lam": "ي"
+    },
+    "translation": "Berjalan di Malam Hari / Mengalir",
+    "babNum": 2,
+    "notes": "Bina Naqis Ya'i. Mengalami I'lal di akhir menjadi Alif Layyinah/Maqshurah pada Madhi: سَرَيَ -> سَرَى, Mudhari: يَسْرِي.",
+    "custom": true
+  },
+  {
+    "id": "fav-custom-waqaya",
+    "root": {
+      "fa": "و",
+      "ain": "ق",
+      "lam": "ي"
+    },
+    "translation": "Melindungi / Menjaga / Memelihara",
+    "babNum": 2,
+    "notes": "Bina Lafif Mafruq. Huruf Waw dibuang pada Mudhari (وَعَدَ) dan Ya' di akhir berubah menjadi Alif Maqshurah pada Madhi (رَمَى): وَقَى - يَقِي.",
+    "custom": true
+  },
+  {
+    "id": "fav-custom-shawaya",
+    "root": {
+      "fa": "ش",
+      "ain": "و",
+      "lam": "ي"
+    },
+    "translation": "Memanggang / Membakar",
+    "babNum": 2,
+    "notes": "Bina Lafif Maqrun. Huruf akhir berupa Ya' berubah menjadi Alif Maqshurah pada Madhi (شَوَى - يَشْوِي), sedangkan Waw di tengah tetap bertahan.",
+    "custom": true
+  },
+  {
+    "id": "fav-custom-adama",
+    "root": {
+      "fa": "أ",
+      "ain": "د",
+      "lam": "م"
+    },
+    "translation": "Mengakrabkan / Mempersatukan",
+    "babNum": 2,
+    "notes": "Bina Mahmuz Fa (أَدَمَ - يَأْدِمُ). Huruf hamzah di posisi Fa Fi'il, ditasrif secara normal dengan perubahan harakah Kasr di Mudhari.",
+    "custom": true
+  },
+  {
+    "id": "fav-custom-waada_mahmuz",
+    "root": {
+      "fa": "و",
+      "ain": "أ",
+      "lam": "د"
+    },
+    "translation": "Mengubur Hidup-Hidup (Bayi)",
+    "babNum": 2,
+    "notes": "Bina Mitsal Wawi & Mahmuz 'Ain. Huruf Waw di depan dibuang pada Mudhari, hamzah berada di posisi 'Ain Fi'il: وَأَدَ - يَئِدُ.",
+    "custom": true
+  },
+  {
+    "id": "fav-custom-fayaa",
+    "root": {
+      "fa": "ف",
+      "ain": "ي",
+      "lam": "أ"
+    },
+    "translation": "Kembali / Berpaling",
+    "babNum": 2,
+    "notes": "Bina Ajwaf Ya'i & Mahmuz Lam. Mengalami I'lal Ajwaf (فَيَأَ -> فَاءَ, Mudhari: يَفْيِئُ -> يَفِيءُ) dengan hamzah di akhir.",
+    "custom": true
+  }
+]
