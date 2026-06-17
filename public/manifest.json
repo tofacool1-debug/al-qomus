@@ -2,7 +2,7 @@
   "name": "Shorof Digital Pro",
   "short_name": "Shorof Pro",
   "description": "Analisis morfologi, tasrif istilahi & lughowi, plus kaidah I'lal fi'il Tsulatsi Mujarrod lengkap",
-  "start_url": "/?source=pwa",
+  "start_url": "https://project-7xl7h.vercel.app/",
   "scope": "/",
   "display": "standalone",
   "display_override": ["window-controls-overlay"],
