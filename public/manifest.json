@@ -29,7 +29,7 @@
   "screenshots": [
     {
       "src": "/screenshot1.jpg",
-      "sizes": "1080x1920",
+      "sizes": "720x1205",
       "type": "image/png",
       "form_factor": "narrow"
     }
