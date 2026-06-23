@@ -1,0 +1,341 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+import { DictionaryEntry, PluralIsimZamanMakan, PluralIsimAlat } from "../types";
+
+/**
+ * Normalizes the bina type to match the standard wazan schema.
+ */
+function getPluralBinaKey(bina: string): string {
+  const norm = (bina || "").toLowerCase().trim();
+  if (norm.includes("shohih") || norm === "sahih") return "sahih";
+  if (norm.includes("ajwaf")) return "ajwaf";
+  if (norm.includes("mitsal")) return "mitsal";
+  if (norm === "naqis" || norm.includes("naqish")) return "naqish";
+  if (norm.includes("muda") || norm.includes("mudho") || norm.includes("ganda")) return "mudaaf";
+  if (norm.includes("mahmuz")) return "mahmuz";
+  if (norm === "lafif maqrun") return "lafif_maqrun";
+  if (norm === "lafif mafruq") return "lafif_mafruq";
+  if (norm.includes("lafif")) return "lafif_maqrun"; // fallback
+  return "sahih";
+}
+
+/**
+ * Smartly replaces pattern weights (F-A-L) with root letters, applying morphological and I'lal rules.
+ */
+function replaceRootForZamanMakanAlat(pattern: string, fa: string, ain: string, lam: string, binaKey: string): string {
+  const cleanFa = fa.replace(/[\u064b-\u065f]/g, "");
+  const cleanAin = ain.replace(/[\u064b-\u065f]/g, "");
+  const cleanLam = lam.replace(/[\u064b-\u065f]/g, "");
+
+  let result = pattern;
+
+  // Naqis & Lafif special morphing for مَفَاعٍ / مَفَاعِيل:
+  if (binaKey === "naqish" || binaKey.startsWith("lafif")) {
+    if (pattern === "مَفَاعِ" || pattern === "مَفَاعٍ") {
+      result = `مَ${cleanFa}َا${cleanAin}ٍ`; // e.g. مَرَامٍ / مَطَاوٍ / مَوَاقٍ
+    } else if (pattern === "مَفَاعِيل") {
+      result = `مَ${cleanFa}َا${cleanAin}ِي${cleanLam}`; // e.g. مَكَايِيل
+    } else {
+      result = pattern
+        .replace(/ل/g, cleanLam)
+        .replace(/ع/g, cleanAin)
+        .replace(/ف/g, cleanFa);
+    }
+  }
+  // Muda'af special morphing (Idgham reinforcement):
+  else if (binaKey === "mudaaf") {
+    if (pattern === "مَفَاعِل") {
+      result = `مَ${cleanFa}َا${cleanLam}ّ`; // e.g. مَقَارّ / makhraj contraction
+    } else {
+      result = pattern
+        .replace(/ل/g, cleanLam)
+        .replace(/ع/g, cleanAin)
+        .replace(/ف/g, cleanFa);
+    }
+  }
+  // Mahmuz special adjustments for hamzah seating:
+  else if (binaKey === "mahmuz") {
+    if (pattern === "مَفَاعِل") {
+      if (cleanFa === "أ" || cleanFa === "ء" || cleanFa === "إ") {
+        result = `مَآ${cleanAin}ِ${cleanLam}`; // e.g. مَآزِر from مِئْزَر
+      } else if (cleanLam === "أ" || cleanLam === "ء" || cleanLam === "أ") {
+        result = `مَ${cleanFa}َا${cleanAin}ِئ`; // e.g. مَبْدَأ -> مَبَادِئ
+      } else {
+        result = pattern
+          .replace(/ل/g, cleanLam)
+          .replace(/ع/g, cleanAin)
+          .replace(/ف/g, cleanFa);
+      }
+    } else {
+      result = pattern
+        .replace(/ل/g, cleanLam)
+        .replace(/ع/g, cleanAin)
+        .replace(/ف/g, cleanFa);
+    }
+  }
+  // Other binas:
+  else {
+    result = pattern
+      .replace(/ل/g, cleanLam)
+      .replace(/ع/g, cleanAin)
+      .replace(/ف/g, cleanFa);
+  }
+
+  // Universal I'lal / corrections for Ajwaf, Naqis, and Lafif:
+  if (binaKey === "ajwaf") {
+    result = result.replace(/اوِ/g, "ائِ").replace(/ايِ/g, "ائِ");
+  }
+  if (binaKey === "naqish" || binaKey.startsWith("lafif")) {
+    result = result.replace(/ِيْ?[يio]ٌ?$/g, "ِيُّ").replace(/ِيْ?[ييو]ٌ?$/g, "ِيُّ");
+  }
+
+  // Universal spelling cleanup for Hamzahs:
+  // 1. Bila hamzah kasroh di tengah kata menjadi (ئ) contoh مسائل
+  result = result.replace(/([\u0621-\u064a])[أإء]ِ/g, "$1ئِ");
+
+  // 2. Bila di depan hamzah ada alif/hamzah sukun maka menjadi (آ) contoh آكل
+  result = result
+    .replace(/أَأْ/g, "آ")
+    .replace(/أَاْ/g, "آ")
+    .replace(/أَأَ/g, "آ")
+    .replace(/أَاَ/g, "آ")
+    .replace(/أَأ/g, "آ")
+    .replace(/أَا/g, "آ")
+    .replace(/أأْ/g, "آ")
+    .replace(/أاْ/g, "آ")
+    .replace(/أأ/g, "آ")
+    .replace(/أا/g, "آ");
+
+  // 3. Bila sebelumnya dhommah maka diganti (ؤ) contoh سؤال
+  result = result.replace(/ُ[أإء]/g, "ُؤ");
+
+  return result;
+}
+
+/**
+ * Formats patterns with instantiated roots.
+ */
+function formatPluralList(patterns: string[], fa: string, ain: string, lam: string, binaKey: string): string {
+  if (!patterns || patterns.length === 0) return "—";
+  return patterns.map(p => {
+    const word = replaceRootForZamanMakanAlat(p, fa, ain, lam, binaKey);
+    return word;
+  }).join(" / ");
+}
+
+/**
+ * Highly compliant Jamak Taksir engine for Isim Zaman & Makan (7 Bina x 5 Shigot).
+ */
+export function analyzeIsimZamanMakanPlural(entry: DictionaryEntry): PluralIsimZamanMakan {
+  const { fa, ain, lam } = entry.root;
+  const rawBina = entry.bina || "Shohih";
+  const binaKey = getPluralBinaKey(rawBina);
+
+  let qillah = "";
+  let katsroh = "";
+  let muntahal = "";
+  let explanation = "";
+  let contoh = "";
+  let ilalRule = "";
+
+  // Formulate a clean default singular based on Bina
+  let defaultMufrod = `مَ${fa}ْ${ain}َ${lam}ٌ`;
+  if (entry.root.fa === "و") {
+    defaultMufrod = `مَ${fa}ْ${ain}ِ${lam}ٌ`; // e.g. mawyidun
+  }
+
+  switch (binaKey) {
+    case "sahih":
+      qillah = formatPluralList(["أَفْعِلَة", "أَفْعَال"], fa, ain, lam, binaKey);
+      katsroh = formatPluralList(["مَفَاعِل"], fa, ain, lam, binaKey);
+      muntahal = formatPluralList(["مَفَاعِل"], fa, ain, lam, binaKey);
+      contoh = "مَسْجِد ← مَسَاجِد";
+      ilalRule = "Tidak ada I'lal pada Bina Shohih";
+      explanation = `Isim Zaman & Makan untuk Bina Shohih berkembang stabil. Jamak Qillah berstruktur 'أَفْعِلَة' dan 'أَفْعَال', Jamak Katsroh berpola 'مَفَاعِل' (seperti مَسَاجِد dari مَسْجِد), serta Shighot Muntahal Jumu' terpopuler mengadopsi struktur wazan 'مَفَاعِل'.`;
+      break;
+
+    case "ajwaf":
+      qillah = formatPluralList(["أَفْعِلَة"], fa, ain, lam, binaKey);
+      katsroh = formatPluralList(["مَفَاعِل"], fa, ain, lam, binaKey);
+      muntahal = formatPluralList(["مَفَاعِل"], fa, ain, lam, binaKey);
+      contoh = "مَقَام ← مَقَاوِم";
+      ilalRule = "Qalbu alif (kembalinya alif di tengah mufrod menjadi waw atau ya asli dalam pola jamak).";
+      explanation = `Isim Zaman & Makan Bina Ajwaf mengurung alif mufrod (morfing) ke huruf asalnya (waw/ya) pada bentuk jamak, seperti 'مَقَاوِم' dari 'مَقَام'. Muntahal jumu' berpola 'مَفَاعِل'.`;
+      break;
+
+    case "mitsal":
+      qillah = formatPluralList(["أَفْعِلَة"], fa, ain, lam, binaKey);
+      katsroh = formatPluralList(["مَفَاعِل"], fa, ain, lam, binaKey);
+      muntahal = formatPluralList(["مَفَاعِل"], fa, ain, lam, binaKey);
+      contoh = "مَوْعِد ← مَوَاعِد";
+      ilalRule = "Waw tetap (huruf waw fa' fi'il kokoh dan utuh).";
+      explanation = `Isim Zaman & Makan Bina Mitsal melestarikan huruf waw asli di Fa fi'il dalam seluruh bentuk muntahal jumu' 'مَفَاعِل' (contoh: مَوَاعِد dari mَوْعِد). Qillah mengikuti wazan 'أَفْعِلَة'.`;
+      break;
+
+    case "naqish":
+      qillah = "—";
+      katsroh = formatPluralList(["مَفَاعٍ"], fa, ain, lam, binaKey);
+      muntahal = formatPluralList(["مَفَاعٍ"], fa, ain, lam, binaKey);
+      contoh = "مَرْمَى ← مَرَامٍ";
+      ilalRule = "Hazf ya (pelepasan huruf akhir penyakit diganti harakat tanwin kasrah).";
+      explanation = `Isim Zaman & Makan Bina Naqis dijamakkan langsung melompati Qillah menuju Shighot Muntahal Jumu' dan Jamak Katsroh 'مَفَاعٍ' (seperti makhraj مَرَامٍ dari mufrod مَرْمَى).`;
+      break;
+
+    case "mudaaf":
+      qillah = formatPluralList(["أَفْعِلَة"], fa, ain, lam, binaKey);
+      katsroh = formatPluralList(["مَفَاعِل"], fa, ain, lam, binaKey);
+      muntahal = formatPluralList(["مَفَاعِل"], fa, ain, lam, binaKey);
+      contoh = "مَقَرّ ← مَقَارّ";
+      ilalRule = "Idgham (peleburan ganda huruf kembar pada akhiran jamak).";
+      explanation = `Isim Zaman & Makan Bina Muda'af menggabungkan dua huruf akhirnya (Idgham kokoh) pada Shighot Muntahal Jumu' and Jamak Katsroh 'مَفَاعِل' sehingga berakhiran tasydid (contoh: مَقَارّ dari مَقَرّ).`;
+      break;
+
+    case "mahmuz":
+      qillah = formatPluralList(["أَفْعِلَة"], fa, ain, lam, binaKey);
+      katsroh = formatPluralList(["مَفَاعِل"], fa, ain, lam, binaKey);
+      muntahal = formatPluralList(["مَفَاعِل"], fa, ain, lam, binaKey);
+      contoh = "مَبْدَأ ← مَبَادِئ";
+      ilalRule = "Hamzah tetap (penulisan diselaraskan dengan makhraj harakat sekitarnya).";
+      explanation = `Isim Zaman & Makan Bina Mahmuz melahirkan jamak berpola murni 'مَفَاعِل' dengan hamzah akhir disesuaikan menjadi bentuk duduk di atas ya' tanpa titik (contoh: مَبَادِئ dari مَبْدَأ).`;
+      break;
+
+    case "lafif_maqrun":
+      qillah = "—";
+      katsroh = formatPluralList(["مَفَاعٍ"], fa, ain, lam, binaKey);
+      muntahal = formatPluralList(["مَفَاعٍ"], fa, ain, lam, binaKey);
+      contoh = "مَطْوَى ← مَطَاوٍ";
+      ilalRule = "Hazf 2 illat (peluluhan huruf lemah di lam fi'il).";
+      explanation = `Isim Zaman & Makan Bina Lafif Maqrun mengerucut ke jamak puncak 'مَفَاعٍ' (contoh: مَطَاوٍ dari mufrod مَطْوَى).`;
+      break;
+
+    case "lafif_mafruq":
+      qillah = "—";
+      katsroh = formatPluralList(["مَفَاعٍ"], fa, ain, lam, binaKey);
+      muntahal = formatPluralList(["مَفَاعٍ"], fa, ain, lam, binaKey);
+      contoh = "مَوْقَى ← مَوَاقٍ";
+      ilalRule = "Hazf 2 illat (peluluhan akhir kata).";
+      explanation = `Isim Zaman & Makan Bina Lafif Mafruq mengalami I'lal nahu di akhir melahirkan jamak muntahal jumu' 'مَفَاعٍ' (contoh: مَوَاقٍ dari مَوْقَى).`;
+      break;
+  }
+
+  const finalExplanation = `${explanation}\n\n• Kaidah I'lal: ${ilalRule}\n• Contoh Klasik: ${contoh}`;
+
+  return {
+    mufrod: defaultMufrod,
+    qillah,
+    katsroh,
+    muntahal,
+    reference: "Kamus Lisanul 'Arab, Kitab Sharaf Al-Kafi, Al-Shorof Al-Wadhih (v1.2)",
+    explanation: finalExplanation
+  };
+}
+
+/**
+ * Highly compliant Jamak Taksir engine for Isim Alat (7 Bina x 5 Shigot).
+ */
+export function analyzeIsimAlatPlural(entry: DictionaryEntry): PluralIsimAlat {
+  const { fa, ain, lam } = entry.root;
+  const rawBina = entry.bina || "Shohih";
+  const binaKey = getPluralBinaKey(rawBina);
+
+  let qillah = "";
+  let katsroh = "";
+  let muntahal = "";
+  let explanation = "";
+  let contoh = "";
+  let ilalRule = "";
+
+  // Formulate a clean default singular based on Bina
+  let defaultMufrod = `مِ${fa}ْ${ain}َ${lam}ٌ`;
+  if (entry.root.fa === "و") {
+    defaultMufrod = `مِ${fa}ْ${ain}َ${lam}ٌ`;
+  }
+
+  switch (binaKey) {
+    case "sahih":
+      qillah = formatPluralList(["أَفْعِلَة"], fa, ain, lam, binaKey);
+      katsroh = formatPluralList(["مَفَاعِيل"], fa, ain, lam, binaKey);
+      muntahal = formatPluralList(["مَفَاعِل"], fa, ain, lam, binaKey);
+      contoh = "مِفْتَاح ← مَفَاتِيح";
+      ilalRule = "Tidak ada I'lal pada Bina Shohih";
+      explanation = `Isim Alat untuk Bina Shohih bertumbuh lancar. Jamak Qillah berwazan 'أَفْعِلَة', Jamak Katsroh berpola panjang 'مَفَاعِيل' (seperti مَفَاتِيح dari مِفْتَاح), dan Muntahal Jumu' berpola ringkas 'مَفَاعِل'.`;
+      break;
+
+    case "ajwaf":
+      qillah = "—";
+      katsroh = formatPluralList(["مَفَاعِيل"], fa, ain, lam, binaKey);
+      muntahal = formatPluralList(["مَفَاعِل"], fa, ain, lam, binaKey);
+      contoh = "مِيزَان ← مَوَازِين";
+      ilalRule = "Qalbu (perubahan huruf waw/ya berharakat sesuai kursi harakatnya).";
+      explanation = `Isim Alat Bina Ajwaf mengembalikan huruf illat yang semula melemah (seperti ya' pada mufrod مِيزَان) menjadi bentuk waw kokoh dalam jamak taksirnya 'مَوَازِين'.`;
+      break;
+
+    case "mitsal":
+      qillah = "—";
+      katsroh = formatPluralList(["مَفَاعِيل"], fa, ain, lam, binaKey);
+      muntahal = formatPluralList(["مَفَاعِل"], fa, ain, lam, binaKey);
+      contoh = "مِوْزَان ← مَوَازِين";
+      ilalRule = "Waw tetap";
+      explanation = `Isim Alat Bina Mitsal mempertahankan waw asli Fa fi'il khalayak ramai. Jamak Katsroh berpola 'مَفَاعِيل' (contoh: مَوَازِين) dan Muntahal berpola 'مَفَاعِل' (contoh: مَوَازِن).`;
+      break;
+
+    case "naqish":
+      qillah = "—";
+      katsroh = formatPluralList(["مَفَاعِيل"], fa, ain, lam, binaKey);
+      muntahal = formatPluralList(["مَفَاعٍ"], fa, ain, lam, binaKey);
+      contoh = "مِغْزَى ← مَغَازٍ";
+      ilalRule = "Hazf lam fi'il penyakit pada muntahal jumu' diganti kasratain tanwin.";
+      explanation = `Isim Alat Bina Naqis dijamakkan melalui pola jamak katsroh panjang 'مَفَاعِيل' (seperti مَغَازِيّ) atau muntahal jumu' 'مَفَاعٍ' dengan membuang ya' di akhir kata dan mentanwinkannya (seperti مَغَازٍ dari mufrod mِغْزَى).`;
+      break;
+
+    case "mudaaf":
+      qillah = "—";
+      katsroh = formatPluralList(["مَفَاعِيل"], fa, ain, lam, binaKey);
+      muntahal = formatPluralList(["مَفَاعِل"], fa, ain, lam, binaKey);
+      contoh = "مِقَصّ ← مَقَاصّ";
+      ilalRule = "Idgham (peleburan kembali dua huruf kembar di akhir kata).";
+      explanation = `Isim Alat Bina Muda'af meleburkan ganda huruf akhir lewat idgham (pola مَفَاعِل menjadi مَقَاصّ dari mufrod mudi'af مِقَصّ).`;
+      break;
+
+    case "mahmuz":
+      qillah = "—";
+      katsroh = formatPluralList(["مَفَاعِيل"], fa, ain, lam, binaKey);
+      muntahal = formatPluralList(["مَفَاعِل"], fa, ain, lam, binaKey);
+      contoh = "مِئْزَر ← مَآزِر"; // spelling normalization
+      ilalRule = "Ibdal";
+      explanation = `Isim Alat Bina Mahmuz ber-I'lal santun menyatukan hamzah dengan alif mad sehingga tertulis sebagai alif maddah murni (contoh: مَآزِر dari mufrod مِئْzer).`;
+      break;
+
+    case "lafif_maqrun":
+      qillah = "—";
+      katsroh = formatPluralList(["مَفَاعِيل"], fa, ain, lam, binaKey);
+      muntahal = formatPluralList(["مَفَاعٍ"], fa, ain, lam, binaKey);
+      contoh = "مِطْوَى ← مَطَاوٍ";
+      ilalRule = "Hazf lam fi'il penyakit diganti tanwin kasrah.";
+      explanation = `Isim Alat Bina Lafif Maqrun mengalir dalam katsroh berpola 'مَفَاعِيل' dan muntahal berpola 'مَفَاعٍ' (contoh: مَطَاوٍ).`;
+      break;
+
+    case "lafif_mafruq":
+      qillah = "—";
+      katsroh = formatPluralList(["مَفَاعِيل"], fa, ain, lam, binaKey);
+      muntahal = formatPluralList(["مَفَاعٍ"], fa, ain, lam, binaKey);
+      contoh = "مِيقَى ← مَوَاقٍ";
+      ilalRule = "Hazf lam fi'il penyakit diganti tanwin kasrah makhraj.";
+      explanation = `Isim Alat Bina Lafif Mafruq melestarikan sifat keselarasan makhraj murni melahirkan jamak 'مَفَاعِيل' dan 'مَفَاعٍ' (contoh: مَوَاقٍ).`;
+      break;
+  }
+
+  const finalExplanation = `${explanation}\n\n• Kaidah I'lal: ${ilalRule}\n• Contoh Klasik: ${contoh}`;
+
+  return {
+    mufrod: defaultMufrod,
+    qillah,
+    katsroh,
+    muntahal,
+    reference: "Kamus Lisanul 'Arab, Kitab Sharaf Al-Kafi, Al-Shorof Al-Wadhih (v1.2)",
+    explanation: finalExplanation
+  };
+}
