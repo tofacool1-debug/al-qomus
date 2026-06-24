@@ -97,8 +97,8 @@ export function analyzeSifatMusyabihatPlural(entry: DictionaryEntry): PluralSifa
   // 2. Bina' Mudho'af (e.g. مَدِيدٌ)
   else if (bina === "Mudho'af") {
     singular = `${fa}َ${ain}ِي${lam}ٌ`; // e.g. مَدِيدٌ
-    qillah = 'اءُ${fa}ْ${ain}ِ${lam}َّاءُ`; // أَمِدَّاءُ (wazan أَفْعِلَاء)
-    katsroh = `${fa}ُ${ain}َ${lam}َاءُ`; // مُدَّاءُ (wazan فُعَلَاء)
+    qillah = 'اءُ${fa}ْ${ain}ِ${lam}َّ`; // أمِدّاءُ (wazan أَفْعِلَاء)
+    katsroh = `اء${fa}ُ${ain}َ${lam}َ`; // مُدَّاء (wazan فُعَلَاء)
     muntahal = `مَ${fa}َا${lam}ُّ`; // مَمَادُّ (wazan مَفَاعِلُ)
     explanation = `Sifat Musyabihat Mudho'af '${singular}' memiliki Jamak Qillah '${qillah}' (wazan أَفْعِلَاء) dengan idgham. Jamak Katsroh-nya diurai menjadi '${katsroh}' (wazan فُعَلَاء), dan Shighot Muntahal Jumu'-nya dirapatkan kembali menjadi '${muntahal}' (wazan مَفَاعِلُ).`;
   }
