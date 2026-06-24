@@ -43,12 +43,16 @@ function replaceRootForIsimFail(pattern: string, fa: string, ain: string, lam: s
       result = `${cleanFa}ُ${cleanAin}َّاءٌ`; // e.g. رُمَّاءٌ / قُضَّاءٌ
     } else if (pattern === "فَوَاعِلُ") {
       result = `${cleanFa}َوَ${cleanAin}ٍ`; // e.g. وَوَاقٍ (which then converts to أَوَاقٍ)
-    } else {
-      result = pattern
-        .replace(/ل/g, cleanLam)
-        .replace(/ع/g, cleanAin)
-        .replace(/ف/g, cleanFa);
-    }
+    }  else if (pattern === "مَفَاعِلُ") {
+  // Naqish: مفاعل → lam fiil ي dibuang, ain dikasroh tanwin
+  // e.g. مَقَاضٍ / مَرَامٍ / مَبَانٍ
+  result = `مَ${cleanFa}َا${cleanAin}ٍ`; 
+} else {
+  result = pattern
+    .replace(/ل/g, cleanLam)
+    .replace(/ع/g, cleanAin)
+    .replace(/ف/g, cleanFa);
+        }
   }
   // Ajwaf special morphing:
   // - فِعْلَة under Ajwaf is morphed to 'فِيَلَة' (e.g., قِيَلَةٌ for root ق-و-ل)
