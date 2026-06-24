@@ -132,7 +132,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     translation: "Takut / Khawatir menghadap",
     babNum: 4,
     bina: "Ajwaf",
-    masdarSamai: "خَوْفٌ",
+    masdarSamai: "خَوْفٌ / خِيْفَةٌ",
     masdarQiyasi: "مَخَافَةٌ",
     sifatMusyabihat: "خَوِفٌ",
     reference: "Lisanul 'Arab, Kamus Al-Munawwir, Tajul 'Arus",
