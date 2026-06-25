@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { DictionaryEntry, SifatMusyabbahTable } from "../types";
+import { DictionaryEntry, SifatMusyabihatTable } from "../types";
 
 type BinaKey = "sahih" | "ajwaf" | "mitsal" | "naqish" | "mudaaf" | "mahmuz" | "lafif_maqrun" | "lafif_mafruq" | "lafif";
 
