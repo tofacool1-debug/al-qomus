@@ -176,7 +176,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
   },
   {
     id: "radhiya",
-    root: { fa: "ر", ain: "ض", lam: "و" },
+    root: { fa: "ر", ain: "ض", lam: "ي" },
     translation: "Ridha / Puas / Menerima",
     babNum: 4,
     bina: "Naqis",
