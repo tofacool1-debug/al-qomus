@@ -27,7 +27,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     "sifatMusyabihat": "يَبِسٌ/ يَبْسٌ يَبِيس / يَبُوس / يَبَاس",
     "sifatMusyabihatPlural": {
       Katsroh: "أَيْبَاس , يُبُوس",
-      muntahal: "-"
+      muntahal: "-",
     }
   },
   {
@@ -41,7 +41,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     "sifatMusyabihat": "يَتِيم",
     "sifatMusyabihatPlural": {
       Katsroh: "أَيْتَام , يَتَامَى , مَيَاتِم",
-      muntahal: "يَتَامَى"
+      muntahal: "يَتَامَى",
     }
   },
   {
@@ -99,7 +99,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     "sifatMusyabihat": "يَمِن / مَيْمُون",
     "sifatMusyabihatPlural": {
       Katsroh: "أَيَامِن , مَيَامِين",
-      muntahal: "أَيَامِن , مَيَامِين"
+      muntahal: "أَيَامِن , مَيَامِين",
     }
   },
   {
@@ -113,7 +113,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     "sifatMusyabihat": "يَنِيع",
     "sifatMusyabihatPlural": {
       Katsroh:"يُنُوعٌ",
-      muntahal: "-"
+      muntahal: "-",
     }
   },
   {
