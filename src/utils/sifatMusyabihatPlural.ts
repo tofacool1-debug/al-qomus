@@ -14,7 +14,7 @@ export function getPluralBinaKey(bina: string): string {
   if (norm.includes("ajwaf")) return "ajwaf";
   if (norm.includes("mitsal")) return "mitsal";
   if (norm === "naqis" || norm.includes("naqish")) return "naqish";
-  if (norm.includes("muda") || norm.includes("mudho") || norm.includes("ganda")) return "mudaaf";
+  if (norm.includes("mudaaf") || norm.includes("mudhoaf") || norm.includes("ganda")) return "mudaaf";
   if (norm.includes("mahmuz")) return "mahmuz";
   if (norm === "lafif maqrun" || norm === "lafif mafruq" || norm.includes("lafif")) return "lafif";
   return "sahih";
