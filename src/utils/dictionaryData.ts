@@ -1017,7 +1017,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Mahmuz Fa",
     masdarSamai: "أَبْقٌ / إِبَاقٌ / أَبَقٌ",
     masdarQiyasi: "مَأْبَقٌ",
-    sifatMusyabihat: "-"
+    sifatMusyabihat: "-",
   },
   {
     id: "abaa",
