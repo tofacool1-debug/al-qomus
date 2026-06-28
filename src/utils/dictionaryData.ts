@@ -1017,17 +1017,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Mahmuz Fa",
     masdarSamai: "أَبْقٌ / إِبَاقٌ / أَبَقٌ",
     masdarQiyasi: "مَأْبَقٌ",
-    sifatMusyabihat: "آبِقٌ",
-    sifatMusyabihatPlural: {
-      katsroh: "أُبَّاقٌ / أَبَقَةٌ",
-      qillah: "-",
-      muntahal: "-",
-      reference: "Kamus Munawwir, Lisanul 'Arab",
-      explanation: "Lafadz آبِقٌ memiliki jamak taksir tidak standard (أُبَّاقٌ / أَبَقَةٌ).",
-      mufrod_mudzakkar: "آبِقٌ",
-      mufrod_muannas: "آبِقَةٌ",
-      wazan_name: "فَاعِلٌ"
-    }
+    sifatMusyabihat: "-",
   },
   {
     id: "abaa",
@@ -1042,10 +1032,6 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
       katsroh: "أُبَاةٌ",
       qillah: "-",
       muntahal: "-",
-      reference: "Kamus Munawwir, Lisanul 'Arab",
-      explanation: "Lafadz أَبِيٌّ memiliki jamak taksir tidak standard (أُبَاةٌ).",
-      mufrod_mudzakkar: "أَبِيٌّ",
-      mufrod_muannas: "أَبِيَّةٌ",
       wazan_name: "فَعِيلٌ"
     }
   },
@@ -1057,7 +1043,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Naqis",
     masdarSamai: "أَتْيٌ / أُتِيٌّ / إِتْيَانٌ",
     masdarQiyasi: "مَأْتًى",
-    sifatMusyabihat: "آتٍ"
+    sifatMusyabihat: "-"
   },
   {
     id: "atsara",
@@ -1127,7 +1113,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Mahmuz Fa",
     masdarSamai: "أَزْرٌ",
     masdarQiyasi: "مَأْزَرٌ",
-    sifatMusyabihat: "آزِرٌ / أَزِيرٌ"
+    sifatMusyabihat: "أَزِيرٌ"
   },
   {
     id: "azafa",
@@ -1137,7 +1123,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Mahmuz Fa",
     masdarSamai: "أَزَفٌ / أُزُوفٌ",
     masdarQiyasi: "مَأْزَفٌ",
-    sifatMusyabihat: "آزِفٌ"
+    sifatMusyabihat: "-"
   },
   {
     id: "asara",
@@ -1154,10 +1140,6 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
       katsroh: "أُسَرَاءُ / أَسْرَى / أُسَارَى",
       qillah: "-.",
       muntahal: "فَعَالَى",
-      reference: "Lisanul 'Arab, Kamus Munawwir",
-      explanation: "Lafadz أَسِيرٌ memiliki jamak taksir khusus di antaranya أُسَرَاء, أَسْرَى, dan أُسَارَى secara sama'i.",
-      isQiyasi: false,
-      isSamai: true,
       wazan_name: "فَعِيلٌ"
     }
   },
@@ -1169,7 +1151,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Mahmuz Fa",
     masdarSamai: "أَسْنٌ / أُسُونٌ",
     masdarQiyasi: "مَأْسَنٌ",
-    sifatMusyabihat: "آسِنٌ / أَسِنٌ"
+    sifatMusyabihat: "أَسِنٌ"
   },
   {
     id: "asaya",
@@ -1196,10 +1178,6 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
       katsroh: "أَشِرُونَ / أَشَارَى",
       qillah: "-.",
       muntahal: "-.",
-      reference: "Lisanul 'Arab",
-      explanation: "Lafadz أَشِرٌ memiliki jamak taksir/salim أَشِرُونَ dan jamak taksir sama'i أَشَارَى.",
-      isQiyasi: false,
-      isSamai: true,
       wazan_name: "فَعِلٌ"
     }
   },
@@ -1211,7 +1189,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Mahmuz Fa",
     masdarSamai: "أَفْكٌ / إِفْكٌ / أُفُوكٌ",
     masdarQiyasi: "مَأْفَكٌ",
-    sifatMusyabihat: "أَفِيكٌ / آفِكٌ"
+    sifatMusyabihat: "أَفِيكٌ"
   },
   {
     id: "afala",
@@ -1221,7 +1199,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Mahmuz Fa",
     masdarSamai: "أُفُولٌ / أَفْلٌ",
     masdarQiyasi: "مَأْفَلٌ",
-    sifatMusyabihat: "آفِلٌ"
+    sifatMusyabihat: "-"
   },
   {
     id: "yabisa",
