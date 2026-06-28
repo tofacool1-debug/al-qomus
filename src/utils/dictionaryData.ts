@@ -26,8 +26,8 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     "masdarQiyasi": "يَبَس",
     "sifatMusyabihat": "يَبِسٌ/ يَبْسٌ يَبِيس / يَبُوس / يَبَاس",
     "sifatMusyabihatPlural": {
-      "Jamak taksir": "أَيْبَاس / يُبُوس",
-      "muntahal jumu'": "-"
+      "Katsroh": "أَيْبَاس / يُبُوس",
+      "muntahal": "-"
     }
   },
   {
@@ -40,8 +40,8 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     "masdarQiyasi": "يَتَم",
     "sifatMusyabihat": "يَتِيم",
     "sifatMusyabihatPlural": {
-      "Jamak taksir": "أَيْتَام / يَتَامَى / مَيَاتِم",
-      "muntahal jumu'": "يَتَامَى"
+      "Katsroh": "أَيْتَام / يَتَامَى / مَيَاتِم",
+      "muntahal": "يَتَامَى"
     }
   },
   {
@@ -54,8 +54,8 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     "masdarQiyasi": "يَسَارَة",
     "sifatMusyabihat": "يَسِير / يَسَر",
     "sifatMusyabihatPlural": {
-      "Jamak taksir": "يُسُر / أَيْسَار",
-      "muntahal jumu'": "-",
+      "Katsroh": "يُسُر / أَيْسَار",
+      "muntahal": "-",
     }
   },
   {
@@ -98,8 +98,8 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     "masdarQiyasi": "يَمَن",
     "sifatMusyabihat": "يَمِن / مَيْمُون",
     "sifatMusyabihatPlural": {
-      "Jamak taksir": "أَيَامِن / مَيَامِين",
-      "muntahal jumu'": "أَيَامِن / مَيَامِين"
+      "Katsroh": "أَيَامِن / مَيَامِين",
+      "muntahal": "أَيَامِن / مَيَامِين"
     }
   },
   {
@@ -112,8 +112,8 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     "masdarQiyasi": "يَفَع",
     "sifatMusyabihat": "يَنِيع",
     "sifatMusyabihatPlural": {
-      "Jamak taksir":"يُنُوعٌ",
-      "muntahal jumu'": "-"
+      "Katsroh":"يُنُوعٌ",
+      "muntahal": "-"
     }
   },
   {
