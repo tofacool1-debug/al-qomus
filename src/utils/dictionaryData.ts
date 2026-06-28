@@ -1011,11 +1011,11 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
   },
   {
     id: "abaqa",
-    root: { "fa": "أ", "ain": "ب", "lam": "ق" },
+    root: { fa: "أ", ain: "ب", lam: "ق" },
     translation: "Lari / melarikan diri / minggat (Kamus Munawwir)",
     babNum: 1,
-    bina: "Shohih",
-    masdarSamai: "إِبَاقٌ",
+    bina: "Mahmuz Fa",
+    masdarSamai: "أَبْقٌ / إِبَاقٌ / أَبَقٌ",
     masdarQiyasi: "مَأْبَقٌ",
     sifatMusyabihat: "-"
   },
