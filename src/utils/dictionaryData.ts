@@ -17,6 +17,136 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     sifatMusyabihat: "قَؤُولٌ",
   },
   {
+    "id": "yabisa",
+    "root": { "fa": "ي", "ain": "ب", "lam": "س" },
+    "translation": "Kering (setelah basah)",
+    "babNum": 4,
+    "bina": "Mithal",
+    "masdarSamai": "يُبْس / يَبَس / يُبُوسَة",
+    "masdarQiyasi": "يَبَس",
+    "sifatMusyabihat": "يَبِسٌ/ يَبْسٌ يَبِيس / يَبُوس / يَبَاس",
+    "sifatMusyabihatPlural": {
+      "Jama taksir": "أَيْبَاس / يُبُوس",
+      "muntahal jumu": "-"
+    }
+  },
+  {
+    "id": "yatima",
+    "root": { "fa": "ي", "ain": "ت", "lam": "م" },
+    "translation": "Menjadi anak yatim / sendiri",
+    "babNum": 4,
+    "bina": "Mithal",
+    "masdarSamai": "يُتْم / يَتَم / يَتَامَة",
+    "masdarQiyasi": "يَتَم",
+    "sifatMusyabihat": "يَتِيم",
+    "sifatMusyabihatPlural": {
+      "Jama taksir": "أَيْتَام / يَتَامَى / مَيَاتِم",
+      "muntahal jumu": "يَتَامَى"
+    }
+  },
+  {
+    "id": "yasara",
+    "root": { "fa": "ي", "ain": "س", "lam": "ر" },
+    "translation": "Mudah / gampang",
+    "babNum": 2,
+    "bina": "Mithal",
+    "masdarSamai": "يُسْر",
+    "masdarQiyasi": "يَسَارَة",
+    "sifatMusyabihat": "يَسِير / يَسَر",
+    "sifatMusyabihatPlural": {
+      "Jama taksir": "يُسُر / أَيْسَار",
+      "muntahal jumu": "-",
+    }
+  },
+  {
+    "id": "yafaa",
+    "root": { "fa": "ي", "ain": "ف", "lam": "ع" },
+    "translation": "Tumbuh remaja / dewasa",
+    "babNum": 3,
+    "bina": "Mithal",
+    "masdarSamai": "يُفُوع / يَفْع",
+    "masdarQiyasi": "يَفَع",
+    "sifatMusyabihat": "يَفَع / أَيْفَع",
+  },
+  {
+    "id": "yaqidzo",
+    "root": { "fa": "ي", "ain": "ق", "lam": "ظ" },
+    "translation": "Terjaga / bangun / waspada",
+    "babNum": 4,
+    "bina": "Mithal",
+    "masdarSamai": "يَقَظَة / يَقَاظَة",
+    "masdarQiyasi": "يَقَظ",
+    "sifatMusyabihat": "يَقِظ / يَقُظ / يَقْظَان",
+  },
+  {
+    "id": "yaqina",
+    "root": { "fa": "ي", "ain": "ق", "lam": "ن" },
+    "translation": "Yakin / tahu pasti",
+    "babNum": 4,
+    "bina": "Mithal",
+    "masdarSamai": "يَقَن / يَقِين",
+    "masdarQiyasi": "يَقَن",
+    "sifatMusyabihat": "يَقِن / يَقِين",
+  },
+  {
+    "id": "yamuna",
+    "root": { "fa": "ي", "ain": "م", "lam": "ن" },
+    "translation": "Beruntung / pergi ke arah kanan",
+    "babNum": 5,
+    "bina": "Mithal",
+    "masdarSamai": "يُمْن",
+    "masdarQiyasi": "يَمَن",
+    "sifatMusyabihat": "يَمِن / مَيْمُون",
+    "sifatMusyabihatPlural": {
+      "Jama taksir": "أَيَامِن / مَيَامِين",
+      "muntahal jumu": "أَيَامِن / مَيَامِين"
+    }
+  },
+  {
+    "id": "yanaa",
+    "root": { "fa": "ي", "ain": "ن", "lam": "ع" },
+    "translation": "Matang / masak (buah)",
+    "babNum": 3,
+    "bina": "Mithal",
+    "masdarSamai": "يْنْع / يُنْع / يَنَاع",
+    "masdarQiyasi": "يَفَع",
+    "sifatMusyabihat": "يَنِيع",
+    "sifatMusyabihatPlural": {
+      "Jama taksir": "ٌيُنُوع",
+      "muntahal jumu": "-"
+    }
+  },
+  {
+    "id": "yaisa",
+    "root": { "fa": "ي", "ain": "أ", "lam": "س" },
+    "translation": "Putus asa",
+    "babNum": 4,
+    "bina": "Mithal Yai Mahmuz Ain",
+    "masdarSamai": "يَأْس / يَآسَة",
+    "masdarQiyasi": "يَأْس",
+    "sifatMusyabihat": "يَئِس / يَؤُوس",
+  },
+  {
+    "id": "yahima",
+    "root": { "fa": "ي", "ain": "ه", "lam": "م" },
+    "translation": "Bingung / mengembara tanpa arah",
+    "babNum": 4,
+    "bina": "Mithal",
+    "masdarSamai": "يَهَم",
+    "masdarQiyasi": "يَهَم",
+    "sifatMusyabihat": "أَيْهَم / يَهِم",
+  },
+  {
+    "id": "bathotho",
+    "root": { "fa": "ب", "ain": "ط", "lam": "ط" },
+    "translation": "Membelah / memotong / berjalan lambat",
+    "babNum": 1,
+    "bina": "Muda'af",
+    "masdarSamai": "بَطّ",
+    "masdarQiyasi": "بَطّ",
+    "sifatMusyabihat": "ٌبَطِيط",
+  },
+  {
     id: "madda",
     root: { fa: "م", ain: "د", lam: "د" },
     translation: "Memperpanjang / Membentangkan",
