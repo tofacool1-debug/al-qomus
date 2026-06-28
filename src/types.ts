@@ -24,22 +24,15 @@ export interface TasrifIstilahi {
   madhi: string;
   mudhari: string;
   masdar: string;
-  masdar23: string[];
   isimFail: ShighotDetail;
   isimMaful: ShighotDetail;
   isimMusyabihat: ShighotDetail;
   musyabihat6?: string[];
-  mubalaghohFaal: ShighotDetail;
-  mubalaghohFa_il: ShighotDetail; // fa'il as fa_il
-  mubalaghohMifal: ShighotDetail;
   amar: string;
   nahi: string;
   isimZaman: ShighotDetail;
   isimMakan: ShighotDetail;
   isimAlat: ShighotDetail;
-  tafdhilMuzakkar: string;
-  tafdhilMuannats: string;
-  tafdhilJamak: string;
   marrah: string;
   nau: string;
   isimTashghir: string;
