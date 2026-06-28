@@ -1241,7 +1241,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
   },
   {
     id: "yasara",
-    root: { fa: "ي", ain: "s", lam: "r" },
+    root: { fa: "ي", ain: "س", lam: "ر" },
     translation: "Menjadi mudah / gampang / makmur (Kamus Munawwir, Lisanul 'Arab)",
     babNum: 2,
     bina: "Mitsal",
@@ -1334,7 +1334,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
   },
   {
     id: "yaeisa",
-    root: { fa: "ي", ain: "ء", lam: "s" },
+    root: { fa: "ي", ain: "ء", lam: "س" },
     translation: "Putus asa / hilang harapan (Kamus Munawwir, Lisanul 'Arab)",
     babNum: 4,
     bina: "Mitsal",
