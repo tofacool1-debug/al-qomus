@@ -1026,18 +1026,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Mahmuz Fa",
     masdarSamai: "أَبْقٌ / إِبَاقٌ / أَبَقٌ",
     masdarQiyasi: "مَأْبَقٌ",
-    sifatMusyabihat: "آبِقٌ",
-    sifatMusyabihatPlural: {
-      katsroh: "أُبَّاقٌ / أَبَقَةٌ",
-      qillah: "-",
-      muntahal: "-",
-      reference: "Kamus Munawwir, Lisanul 'Arab",
-      explanation: "Lafadz آبِقٌ memiliki jamak taksir tidak standard (أُبَّاقٌ / أَبَقَةٌ).",
-      mufrod_mudzakkar: "آبِقٌ",
-      mufrod_muannas: "آبِقَةٌ",
-      wazan_name: "فَاعِلٌ"
-    }
-  },
+    },
   {
     id: "abaa",
     root: { fa: "أ", ain: "ب", lam: "ي" },
@@ -1047,16 +1036,6 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     masdarSamai: "إِبَاءٌ / إِبَاءَةٌ",
     masdarQiyasi: "مَأْبًى",
     sifatMusyabihat: "أَبِيٌّ",
-    sifatMusyabihatPlural: {
-      katsroh: "أُبَاةٌ",
-      qillah: "-",
-      muntahal: "-",
-      reference: "Kamus Munawwir, Lisanul 'Arab",
-      explanation: "Lafadz أَبِيٌّ memiliki jamak taksir tidak standard (أُبَاةٌ).",
-      mufrod_mudzakkar: "أَبِيٌّ",
-      mufrod_muannas: "أَبِيَّةٌ",
-      wazan_name: "فَعِيلٌ"
-    }
   },
   {
     id: "ataa",
