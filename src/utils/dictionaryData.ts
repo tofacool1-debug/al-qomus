@@ -148,7 +148,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
   },
   {
     id: "radhiya",
-    root: { fa: "ر", ain: "ض", lam: "و" },
+    root: { fa: "ر", ain: "ض", lam: "ي" },
     translation: "Ridha / Puas / Menerima",
     babNum: 4,
     bina: "Naqis",
@@ -226,7 +226,6 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     masdarSamai: "نَصْرٌ / نُصْرَةٌ / نَصَارَةٌ",
     masdarQiyasi: "مَنْصَرٌ",
     sifatMusyabihat: "نَصِيرٌ / نَاصُورٌ",
-    jamaTaksirSamai: "أَنْصَارٌ",
   },
   {
     id: "dhahaba",
@@ -339,7 +338,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     sifatMusyabihat: "صَبُورٌ / صَبِيرٌ",
   },
   {
-    id: "syafara",
+    id: "safara",
     root: { fa: "س", ain: "ف", lam: "ر" },
     translation: "Bepergian / Menyingkap tabir / Bersinar",
     babNum: 2,
@@ -439,7 +438,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     sifatMusyabihat: "وَرِيثٌ",
   },
   {
-    id: "yashara",
+    id: "yasara",
     root: { fa: "ي", ain: "س", lam: "ر" },
     translation: "Menjadi mudah / Ringan / Gampang",
     babNum: 2,
@@ -1001,7 +1000,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
   },
   {
     id: "sakhiya",
-    root: { fa: "س", ain: "خ", lam: "و" },
+    root: { fa: "س", ain: "خ", lam: "ي" },
     translation: "Menjadi dermawan / murah hati (Kamus Munawwir)",
     babNum: 4,
     bina: "Naqis",
