@@ -507,18 +507,6 @@ export const IilalEngine = {
     return word.replace(/أُأْ/g, "آ").replace(/أُءْ/g, "آ");
   },
 
-  buatMubalaghohFaal(fa: string, ain: string, lam: string, bina: string): string {
-    return this.replaceRoot(`فَعَّALٌ`.replace("AL", "ال"), fa, ain, lam);
-  },
-
-  buatMubalaghohFa_il(fa: string, ain: string, lam: string, bina: string): string {
-    return this.replaceRoot(`فَعِيلٌ`, fa, ain, lam);
-  },
-
-  buatMubalaghohMifal(fa: string, ain: string, lam: string, bina: string): string {
-    return this.replaceRoot(`مِفْعَالٌ`, fa, ain, lam);
-  },
-
   buatIsimZamanMakan(fa: string, ain: string, lam: string, bina: string, wazanMudhari: string, jenis: "zaman" | "makan"): string {
     // Usually مَفْعَلٌ or مَفْعِلٌ. Let's return مَفْعِلٌ for Bab 2/6 (where Mudhari has Kasra) or for Mitsal
     const isKasraMudhari = wazanMudhari.includes(KASRA) || wazanMudhari.includes(`ع${KASRA}`) || wazanMudhari.includes("يَفْعِلُ");
@@ -607,28 +595,6 @@ export const IilalEngine = {
     return word;
   },
 
-  buatIsimTafdhil(fa: string, ain: string, lam: string, bina: string, wazanMadhi: string): [string, string, string] {
-    if (!wazanMadhi.startsWith("فَعَلَ") && !wazanMadhi.startsWith("فَعِلَ")) {
-      return ["", "", ""];
-    }
-    let muzakkar = `أَ${fa}ْ${ain}َ${lam}ُ`;
-    let muzakkarIilal = muzakkar;
-
-    if (bina === "Ajwaf") {
-      muzakkarIilal = ain === "و" ? `أَقْوَى` : `أَبْيَى`; // Template example
-      if (fa === "ق" && lam === "ل") muzakkarIilal = "أَقْوَلُ"; // fallback
-    } else if (bina === "Naqis" || bina === "Lafif Maqrun" || bina === "Lafif Mafruq") {
-      muzakkarIilal = `أَ${fa}ْ${ain}َى`; // أَجْلَى, أَعْلَى
-    } else if (bina === "Mudho'af") {
-      muzakkarIilal = `أَ${fa}َ${ain}${SHADDA}${DAMMA}`; // أَشَدُّ, أَعَزُّ
-    }
-
-    const muannats = this.replaceRoot(`فُعْلَى`, fa, ain, lam);
-    const jamak = muzakkarIilal.replace(`${DAMMA}`, `ُونَ`);
-
-    return [muzakkarIilal, muannats, jamak];
-  },
-
   buatIsimMarrah(fa: string, ain: string, lam: string, bina: string): string {
     if (bina === "Ajwaf") {
       const weak = ain === "و" ? "و" : "ي";
@@ -653,11 +619,6 @@ export const IilalEngine = {
       return `${fa}ِ${ain}${SHADDA}َةٌ`;
     }
     return `${fa}ِ${ain}ْ${lam}َةٌ`;
-  },
-
-  // 23 WAZAN MASDAR
-  buatMasdar23(fa: string, ain: string, lam: string, wazanMadhi: string, bina: string): string[] {
-    return [];
   },
 
   // JAMAK TAKSIR & MUNTAHAL JUMU'
@@ -738,11 +699,9 @@ export const IilalEngine = {
     const { fa, ain, lam, wazanMadhi, wazanMudhari, masdar, sifatMusyabihat } = dataWazan;
     const bina = this.detectBina(fa, ain, lam);
 
-    const tafdhil = this.buatIsimTafdhil(fa, ain, lam, bina, wazanMadhi);
     const marrah = this.buatIsimMarrah(fa, ain, lam, bina);
     const nau = this.buatIsimNau(fa, ain, lam, bina);
-    const masdar23 = this.buatMasdar23(fa, ain, lam, wazanMadhi, bina);
-
+    
     const madhi = this.applyIilalMadhi(fa, ain, lam, bina, wazanMadhi, dataWazan.babNum);
     const mudhari = this.applyIilalMudhari(fa, ain, lam, bina, wazanMudhari);
     const amar = this.applyIilalAmar(fa, ain, lam, bina, wazanMudhari);
@@ -757,9 +716,6 @@ export const IilalEngine = {
     const isimMusyabihatMufrod = hasSifatMusyabihat ? sifatMusyabihat! : "";
     const musyabihat6 = hasSifatMusyabihat ? [sifatMusyabihat!] : [];
 
-    const mubalaghohFaalMufrod = this.buatMubalaghohFaal(fa, ain, lam, bina);
-    const mubalaghohFa_ilMufrod = this.buatMubalaghohFa_il(fa, ain, lam, bina);
-    const mubalaghohMifalMufrod = this.buatMubalaghohMifal(fa, ain, lam, bina);
     const isimZamanMufrod = this.buatIsimZamanMakan(fa, ain, lam, bina, wazanMudhari, "zaman");
     const isimMakanMufrod = this.buatIsimZamanMakan(fa, ain, lam, bina, wazanMudhari, "makan");
     const isimAlatMufrod = this.buatIsimAlat(fa, ain, lam, bina, wazanMadhi, wazanMudhari, dataWazan.babNum);
@@ -769,22 +725,15 @@ export const IilalEngine = {
       madhi,
       mudhari,
       masdar: this.replaceRoot(masdar, fa, ain, lam),
-      masdar23,
       isimFail: this.buatShighotDetail(isimFailMufrod, fa, ain, lam, "فَاعِلٌ", bina),
       isimMaful: this.buatShighotDetail(isimMafulMufrod, fa, ain, lam, "مَفْعُولٌ", bina),
       isimMusyabihat: this.buatShighotDetail(isimMusyabihatMufrod, fa, ain, lam, "فَعِيلٌ", bina),
       musyabihat6: musyabihat6,
-      mubalaghohFaal: this.buatShighotDetail(mubalaghohFaalMufrod, fa, ain, lam, "فَعَّالٌ", bina),
-      mubalaghohFa_il: this.buatShighotDetail(mubalaghohFa_ilMufrod, fa, ain, lam, "فَعِيلٌ", bina),
-      mubalaghohMifal: this.buatShighotDetail(mubalaghohMifalMufrod, fa, ain, lam, "مِفْعَالٌ", bina),
       amar,
       nahi,
       isimZaman: this.buatShighotDetail(isimZamanMufrod, fa, ain, lam, "مَفْعَلٌ", bina),
       isimMakan: this.buatShighotDetail(isimMakanMufrod, fa, ain, lam, "مَفْعَلٌ", bina),
       isimAlat: this.buatShighotDetail(isimAlatMufrod, fa, ain, lam, bina === "Ajwaf" ? "مِفْعَلٌ" : "مِفْعَالٌ", bina),
-      tafdhilMuzakkar: tafdhil[0],
-      tafdhilMuannats: tafdhil[1],
-      tafdhilJamak: tafdhil[2],
       marrah,
       nau,
       isimTashghir,
@@ -819,18 +768,11 @@ export const IilalEngine = {
       madhi: process(rawResult.madhi),
       mudhari: process(rawResult.mudhari),
       masdar: process(rawResult.masdar),
-      masdar23: rawResult.masdar23.map(w => {
-        const processed = process(w);
-        const isMasyhur = self.isMasdarMasyhur(processed, dataWazan.masdar, { fa, ain, lam });
-        return isMasyhur ? processed : "-";
       }),
       isimFail: cleanDetails(rawResult.isimFail),
       isimMaful: isBab5 ? { mufrod: "-", jamak: ["-"], muntahal: ["-"] } : cleanDetails(rawResult.isimMaful),
       isimMusyabihat: cleanDetails(rawResult.isimMusyabihat),
       musyabihat6: rawResult.musyabihat6.map(process),
-      mubalaghohFaal: cleanDetails(rawResult.mubalaghohFaal),
-      mubalaghohFa_il: cleanDetails(rawResult.mubalaghohFa_il),
-      mubalaghohMifal: cleanDetails(rawResult.mubalaghohMifal),
       amar: process(rawResult.amar),
       nahi: process(rawResult.nahi),
       isimZaman: cleanDetails(rawResult.isimZaman),
@@ -840,9 +782,6 @@ export const IilalEngine = {
         : isBab5
           ? { mufrod: "-", jamak: ["(-)"], muntahal: ["(-)"] }
           : cleanDetails(rawResult.isimAlat),
-      tafdhilMuzakkar: process(rawResult.tafdhilMuzakkar),
-      tafdhilMuannats: process(rawResult.tafdhilMuannats),
-      tafdhilJamak: process(rawResult.tafdhilJamak),
       marrah: process(rawResult.marrah),
       nau: process(rawResult.nau),
       isimTashghir: process(rawResult.isimTashghir),
