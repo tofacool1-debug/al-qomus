@@ -1015,6 +1015,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Shohih",
     masdarSamai: "كَمَالٌ / كُمُولٌ",
     masdarQiyasi: "مَكْمَلٌ",
+    sifatMusyabihat: "-",
   },
   {
     id: "abaqa",
@@ -1024,6 +1025,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Mahmuz Fa",
     masdarSamai: "أَبْقٌ / إِبَاقٌ / أَبَقٌ",
     masdarQiyasi: "مَأْبَقٌ",
+    sifatMusyabihat: "-",
     },
   {
     id: "abaa",
@@ -1043,6 +1045,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Naqis",
     masdarSamai: "أَتْيٌ / أُتِيٌّ / إِتْيَانٌ",
     masdarQiyasi: "مَأْتًى",
+    sifatMusyabihat: "-",
   },
   {
     id: "atsara",
