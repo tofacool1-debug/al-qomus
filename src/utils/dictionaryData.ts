@@ -568,16 +568,6 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     sifatMusyabihat: "وَرِيثٌ",
   },
   {
-    id: "yasara",
-    root: { fa: "ي", ain: "س", lam: "ر" },
-    translation: "Menjadi mudah / Ringan / Gampang",
-    babNum: 2,
-    bina: "Mitsal",
-    masdarSamai: "يُسْرٌ / مَيْسَرٌ / تَيْسِيرٌ",
-    masdarQiyasi: "تَيْسِيرٌ",
-    sifatMusyabihat: "يَسِيرٌ",
-  },
-  {
     id: "banaa",
     root: { fa: "ب", ain: "ن", lam: "ي" },
     translation: "Membangun / Mendirikan fondasi",
@@ -1175,7 +1165,6 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Naqis",
     masdarSamai: "أَتْيٌ / أُتِيٌّ / إِتْيَانٌ",
     masdarQiyasi: "مَأْتًى",
-    sifatMusyabihat: "-",
   },
   {
     id: "atsara",
