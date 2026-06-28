@@ -215,7 +215,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Shohih",
     masdarSamai: "كَتْبٌ / كِتَابٌ / كِتَابَةٌ",
     masdarQiyasi: "مَكْتَبٌ / مَكْتَبَةٌ",
-    sifatMusyabihat: "كَتِيبٌ / كَاتِبٌ",
+    sifatMusyabihat: "كَتِيبٌ",
   },
   {
     id: "nasara",
@@ -445,7 +445,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Mitsal",
     masdarSamai: "يُسْرٌ / مَيْسَرٌ / تَيْسِيرٌ",
     masdarQiyasi: "تَيْسِيرٌ",
-    sifatMusyabihat: "يَسِيرٌ / يَاسِرٌ",
+    sifatMusyabihat: "يَسِيرٌ",
   },
   {
     id: "banaa",
@@ -636,7 +636,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Naqis",
     masdarSamai: "غَزْوٌ / مَغْزًى / غَزَوَانٌ / غَزْوَةٌ",
     masdarQiyasi: "تَغْزِيَةٌ",
-    sifatMusyabihat: "غَزِيٌّ / /غَازٍ",
+    sifatMusyabihat: "غَزِيٌّ",
   },
   {
     id: "raja",
@@ -796,7 +796,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Shohih",
     masdarSamai: "طُهْرٌ / /طَهَارَةٌ / مَطْهَرٌ",
     masdarQiyasi: "تَطْهِيرٌ",
-    sifatMusyabihat: "طَاهِرٌ / /طَهُورٌ",
+    sifatMusyabihat: "طَهُورٌ",
   },
   {
     id: "azhuma",
@@ -838,16 +838,16 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     masdarQiyasi: "مَجَادَةٌ",
     sifatMusyabihat: "جَوَادٌ",
     sifatMusyabihatPlural: {
-      katsroh: "أَجْوَادٌ / جُودٌ / جُوَدَاءُ / أَجَاوِيدُ",
+      katsroh: "أَجْوَادٌ / جُودٌ / جُوَدَاءُ",
       qillah: "-",
       muntahal: "أَجَاوِيدُ",
       reference: "Kamus Munawwir, Kamus Munjid, Lisanul 'Arab",
       explanation: "Lafadz جَوَادٌ memiliki jamak taksir standard (أَجْوَادٌ, جُودٌ, جُوَدَاءُ) serta jamak taksir non-standard yaitu أَجَاوِيدُ yang tidak sesuai dengan pola standard biasa Sifat Musyabihat.",
       mufrod_mudzakkar: "جَوَادٌ",
       mufrod_muannas: "جَوَادَةٌ",
-      wazan_name: "فَعَالٌ"
+      wazan_name: "فَعَالٌ",
     }
-  },
+    },
   {
     id: "najaha",
     root: { fa: "ن", ain: "ج", lam: "ح" },
@@ -856,7 +856,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Shohih",
     masdarSamai: "نَجْحٌ / نَجَاحٌ",
     masdarQiyasi: "مَنْجَحٌ",
-    sifatMusyabihat: "نَجِيحٌ"
+    sifatMusyabihat: "نَجِيحٌ",
   },
   {
     id: "adala",
@@ -866,7 +866,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Shohih",
     masdarSamai: "عَدْلٌ / عَدَالَةٌ",
     masdarQiyasi: "مَعْدِلٌ",
-    sifatMusyabihat: "عَدْلٌ / عَدِيلٌ"
+    sifatMusyabihat: "عَدْلٌ / عَدِيلٌ",
   },
   {
     id: "zhalama",
@@ -876,7 +876,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Shohih",
     masdarSamai: "ظُلْمٌ / مَظْلَمَةٌ",
     masdarQiyasi: "مَظْلَمٌ",
-    sifatMusyabihat: "ظَلُومٌ / ظَلِيمٌ"
+    sifatMusyabihat: "ظَلُومٌ / ظَلِيمٌ",
   },
   {
     id: "syafah",
@@ -886,7 +886,6 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Naqis",
     masdarSamai: "شِفَاءٌ / شَفْيٌ",
     masdarQiyasi: "مَشْفًى",
-    sifatMusyabihat: "شَافٍ"
   },
   {
     id: "bakata",
@@ -896,7 +895,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Shohih",
     masdarSamai: "بَكْتٌ",
     masdarQiyasi: "مَبْكَتٌ",
-    sifatMusyabihat: "بَكِيتٌ"
+    sifatMusyabihat: "بَكِيتٌ",
   },
   {
     id: "rahima",
@@ -906,7 +905,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Shohih",
     masdarSamai: "رَحْمَةٌ / مَرْحَمَةٌ",
     masdarQiyasi: "تَرْحَامٌ",
-    sifatMusyabihat: "رَحِيمٌ"
+    sifatMusyabihat: "رَحِيمٌ",
   },
   {
     id: "thabakha",
@@ -916,7 +915,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Shohih",
     masdarSamai: "طَبْخٌ",
     masdarQiyasi: "مَطْبَخٌ",
-    sifatMusyabihat: "طَبِيخٌ"
+    sifatMusyabihat: "طَبِيخٌ",
   },
   {
     id: "qabila",
@@ -926,7 +925,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Shohih",
     masdarSamai: "قَبُولٌ / قُبْلٌ",
     masdarQiyasi: "مَقْبَلٌ",
-    sifatMusyabihat: "قَبِيلٌ"
+    sifatMusyabihat: "قَبِيلٌ",
   },
   {
     id: "faala",
@@ -936,7 +935,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Shohih",
     masdarSamai: "فِعْلٌ / فَعَالٌ",
     masdarQiyasi: "مَفْعَلٌ",
-    sifatMusyabihat: "فَعِيلٌ"
+    sifatMusyabihat: "فَعِيلٌ",
   },
   {
     id: "batula",
@@ -946,7 +945,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Shohih",
     masdarSamai: "بُطُولَةٌ / بَطَالَةٌ / بَطْلٌ",
     masdarQiyasi: "مَبْطَلٌ",
-    sifatMusyabihat: "بَطَلٌ"
+    sifatMusyabihat: "بَطَلٌ",
   },
   {
     id: "jabuna",
@@ -956,7 +955,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Shohih",
     masdarSamai: "جُبْنٌ / جَبَانَةٌ",
     masdarQiyasi: "مَجْبَنٌ",
-    sifatMusyabihat: "جَبَانٌ"
+    sifatMusyabihat: "جَبَانٌ",
   },
   {
     id: "bakhila",
@@ -966,7 +965,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Shohih",
     masdarSamai: "بُخْلٌ / بَخَلٌ / بَخَالَةٌ",
     masdarQiyasi: "مَبْخَلٌ",
-    sifatMusyabihat: "بَخِيلٌ"
+    sifatMusyabihat: "بَخِيلٌ",
   },
   {
     id: "fashuha",
@@ -976,7 +975,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Shohih",
     masdarSamai: "فَصَاحَةٌ / فُصْحٌ",
     masdarQiyasi: "مَفْصَحٌ",
-    sifatMusyabihat: "فَصِيحٌ"
+    sifatMusyabihat: "فَصِيحٌ",
   },
   {
     id: "dhakiya",
@@ -986,7 +985,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Naqis",
     masdarSamai: "ذَكَاءٌ / ذَكًى",
     masdarQiyasi: "مَذْكًى",
-    sifatMusyabihat: "ذَكِيٌّ"
+    sifatMusyabihat: "ذَكِيٌّ",
   },
   {
     id: "azza",
@@ -996,7 +995,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Mudho'af",
     masdarSamai: "عِزٌّ / عِزَّةٌ / عَزَازَةٌ",
     masdarQiyasi: "مَعِزٌّ",
-    sifatMusyabihat: "عَزِيزٌ"
+    sifatMusyabihat: "عَزِيزٌ",
   },
   {
     id: "sakhiya",
@@ -1006,7 +1005,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Naqis",
     masdarSamai: "سَخَاءٌ / سَخْوٌ",
     masdarQiyasi: "مَسْخًى",
-    sifatMusyabihat: "سَخِيٌّ"
+    sifatMusyabihat: "سَخِيٌّ",
   },
   {
     id: "kamula",
@@ -1016,7 +1015,6 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Shohih",
     masdarSamai: "كَمَالٌ / كُمُولٌ",
     masdarQiyasi: "مَكْمَلٌ",
-    sifatMusyabihat: "كَامِلٌ"
   },
   {
     id: "abaqa",
@@ -1045,7 +1043,6 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Naqis",
     masdarSamai: "أَتْيٌ / أُتِيٌّ / إِتْيَانٌ",
     masdarQiyasi: "مَأْتًى",
-    sifatMusyabihat: "آتٍ"
   },
   {
     id: "atsara",
@@ -1055,7 +1052,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Mahmuz Fa",
     masdarSamai: "أَثْرٌ / أُثْرَةٌ / أَثَارَةٌ",
     masdarQiyasi: "مَأْثَرٌ",
-    sifatMusyabihat: "أَثِيرٌ"
+    sifatMusyabihat: "أَثِيرٌ",
   },
   {
     id: "ajara",
@@ -1065,7 +1062,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Mahmuz Fa",
     masdarSamai: "أَجْرٌ / أُجْرَةٌ",
     masdarQiyasi: "مَأْجَرٌ",
-    sifatMusyabihat: "أَجِيرٌ"
+    sifatMusyabihat: "أَجِيرٌ",
   },
   {
     id: "akhura",
@@ -1075,7 +1072,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Mahmuz Fa",
     masdarSamai: "أُخُورَةٌ / أَخَارَةٌ",
     masdarQiyasi: "مَأْخَرٌ",
-    sifatMusyabihat: "أَخِيرٌ"
+    sifatMusyabihat: "أَخِيرٌ",
   },
   {
     id: "aduba",
@@ -1085,7 +1082,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Mahmuz Fa",
     masdarSamai: "أَدَبٌ / مَأْدَبَةٌ / أَدَابَةٌ",
     masdarQiyasi: "مَأْدَبٌ",
-    sifatMusyabihat: "أَدِيبٌ"
+    sifatMusyabihat: "أَدِيبٌ",
   },
   {
     id: "adhina",
@@ -1095,7 +1092,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Mahmuz Fa",
     masdarSamai: "إِذْنٌ / أَذَنٌ / أَذَانَةٌ",
     masdarQiyasi: "مَأْذَنٌ",
-    sifatMusyabihat: "أَذِينٌ"
+    sifatMusyabihat: "أَذِينٌ",
   },
   {
     id: "ariba",
@@ -1105,7 +1102,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     bina: "Mahmuz Fa",
     masdarSamai: "أَرَبٌ / إِرْبٌ / أَرَابَةٌ",
     masdarQiyasi: "مَأْرَبٌ",
-    sifatMusyabihat: "أَرِيبٌ"
+    sifatMusyabihat: "أَرِيبٌ",
   }
 ];
 
