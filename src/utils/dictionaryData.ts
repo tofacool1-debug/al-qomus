@@ -37,7 +37,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     sifatMusyabihat: "نَدِيدٌ / نَدٌّ",
     sifatMusyabihatPlural: {
       muntahal: "-"
-   }
+  }
   },
   {
     id: "nazza",
@@ -53,7 +53,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
       mufrod_muannas: "نَزِيزَةٌ",
       katsroh: "أَنْزِزَةٌ / نِزَازٌ",
       muntahal: "-."
-   }
+  }
   },
   {
     id: "nassa",
