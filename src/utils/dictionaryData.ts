@@ -25,6 +25,1475 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     masdarSamai: "مَدٌّ",
     masdarQiyasi: "تَمْدِيدٌ",
     sifatMusyabihat: "مَدِيدٌ",
+    {
+    id: "nadda",
+    root: { fa: "ن", ain: "د", lam: "د" },
+    translation: "Melarikan diri / kabur / menjauh / ganjil (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mudho'af",
+    masdarSamai: "نَدٌّ / نُدُودٌ",
+    masdarQiyasi: "مَنَدٌّ",
+    sifatMusyabihat: "نَدِيدٌ / نَدٌّ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "nazza",
+    root: { fa: "ن", ain: "ز", lam: "ز" },
+    translation: "Memancar / menetes / melompat / gelisah (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mudho'af",
+    masdarSamai: "نَزٌّ / نَزِيزٌ",
+    masdarQiyasi: "مَنَزٌّ",
+    sifatMusyabihat: "نَزِيزٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "نَزِيزٌ",
+      mufrod_muannas: "نَزِيزَةٌ",
+      katsroh: "أَنْزِزَةٌ / نِزَازٌ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "nassa",
+    root: { fa: "ن", ain: "س", lam: "س" },
+    translation: "Mengeringkan / menjadi kering / menggiring (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Mudho'af",
+    masdarSamai: "نَسٌّ / نُسُوسٌ",
+    masdarQiyasi: "مَنَسٌّ",
+    sifatMusyabihat: "نَسِيسٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "نَسِيسٌ",
+      mufrod_muannas: "نَسِيسَةٌ",
+      katsroh: "أَنْسِسَةٌ / نِسَاسٌ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "nasysya",
+    root: { fa: "ن", ain: "ش", lam: "ش" },
+    translation: "Mengering / menghalau burung / mendidih (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Mudho'af",
+    masdarSamai: "نَشٌّ / نَشِيشٌ",
+    masdarQiyasi: "مَنَشٌّ",
+    sifatMusyabihat: "نَشِيشٌ / نَشَّاشٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "نَشِيشٌ / نَشَّاشٌ",
+      mufrod_muannas: "نَشِيشَةٌ / نَشَّاشَةٌ",
+      katsroh: "أَنْشِشَةٌ / نَشَّاشُونَ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "nashsha",
+    root: { fa: "ن", ain: "ص", lam: "ص" },
+    translation: "Menegaskan / menyusun teks / menaikkan / menentukan (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Mudho'af",
+    masdarSamai: "نَصٌّ / نَصِيصٌ",
+    masdarQiyasi: "مَنَصٌّ",
+    sifatMusyabihat: "نَصِيصٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "نَصِيصٌ",
+      mufrod_muannas: "نَصِيصَةٌ",
+      katsroh: "أَنْصِصَةٌ / نِصَاصٌ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "nadhdha",
+    root: { fa: "ن", ain: "ض", lam: "ض" },
+    translation: "Menetes air / memancar perlahan / menguangkan barang (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mudho'af",
+    masdarSamai: "نَضٌّ / نَضِيضٌ",
+    masdarQiyasi: "مَنَضٌّ",
+    sifatMusyabihat: "نَضِيضٌ / نَضَّاضٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "نَضِيضٌ / نَضَّاضٌ",
+      mufrod_muannas: "نَضِيضَةٌ / نَضَّاضَةٌ",
+      katsroh: "أَنْضِضَةٌ / نَضَّاضُونَ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "naththa",
+    root: { fa: "ن", ain: "ط", lam: "ط" },
+    translation: "Melompat / meloncat / meregangkan (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Mudho'af",
+    masdarSamai: "نَطٌّ / نَطِيطٌ",
+    masdarQiyasi: "مَنَطٌّ",
+    sifatMusyabihat: "نَطِيطٌ / نَطَّاطٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "نَطِيطٌ / نَطَّاطٌ",
+      mufrod_muannas: "نَطِيطَةٌ / نَطَّاطَةٌ",
+      katsroh: "أَنْطِطَةٌ / نَطَّاطُونَ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "naffa",
+    root: { fa: "ن", ain: "ف", lam: "ف" },
+    translation: "Meniup hidung / bersin / meremahkan (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mudho'af",
+    masdarSamai: "نَفٌّ / نَفِيفٌ",
+    masdarQiyasi: "مَنَفٌّ",
+    sifatMusyabihat: "نَفِيفٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "نَفِيفٌ",
+      mufrod_muannas: "نَفِيفَةٌ",
+      katsroh: "أَنْفِفَةٌ / نِفَافٌ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "naqqa",
+    root: { fa: "ن", ain: "ق", lam: "ق" },
+    translation: "Berbunyi (katak) / berkotek (ayam) / mengerik (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Mudho'af",
+    masdarSamai: "نَقٌّ / نَقِيقٌ",
+    masdarQiyasi: "مَنَقٌّ",
+    sifatMusyabihat: "نَقِيقٌ / نَقَّاقٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "نَقِيقٌ / نَقَّاقٌ",
+      mufrod_muannas: "نَقِيقَةٌ / نَقَّاقَةٌ",
+      katsroh: "أَنْقِقَةٌ / نَقَّاقُونَ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "namma",
+    root: { fa: "ن", ain: "م", lam: "م" },
+    translation: "Mengadu domba / memfitnah / menghias (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Mudho'af",
+    masdarSamai: "نَمٌّ / نَمِيمٌ / نَمِيمَةٌ",
+    masdarQiyasi: "مَنَمٌّ",
+    sifatMusyabihat: "نَمِيمٌ / نَمُومٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "نَمِيمٌ / نَمُومٌ",
+      mufrod_muannas: "نَمِيمَةٌ / نَمُومَةٌ",
+      katsroh: "أَنِمَّاءُ / نُمَّامٌ",
+      muntahal: "-"
+    }
+  },
+  {
+    id: "naqasa",
+    root: { fa: "ن", ain: "ق", lam: "ص" },
+    translation: "Berkurang / Menyusut / Mengurangi",
+    babNum: 1,
+    bina: "Shohih",
+    masdarSamai: "نَقْصٌ / نُقْصَانٌ",
+    masdarQiyasi: "مَنْقَصَةٌ / نَقِيصَةٌ",
+    sifatMusyabihat: "نَقِيصٌ / نَقِصٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "مَنَاقِصُ / نَقَائِصُ"
+    }
+  },
+  {
+    id: "naqadha",
+    root: { fa: "ن", ain: "ق", lam: "ض" },
+    translation: "Merusak / Membatalkan / Meruntuhkan",
+    babNum: 1,
+    bina: "Shohih",
+    masdarSamai: "نَقْضٌ / تَنْقَاضٌ",
+    masdarQiyasi: "مَنْقَضٌ / نَقِيضَةٌ",
+    sifatMusyabihat: "نَقِيضٌ / نَقِضٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "نَقِيضٌ / نَقِضٌ",
+      mufrod_muannas: "نَقِيضَةٌ / نَقِضَةٌ",
+      katsroh: "أَنْقَاضٌ / نُقُضٌ"
+    }
+  },
+  {
+    id: "naqaa",
+    root: { fa: "ن", ain: "ق", lam: "ع" },
+    translation: "Merendam / Puas minum / Menetap",
+    babNum: 3,
+    bina: "Shohih",
+    masdarSamai: "نَقْعٌ / نُقُوعٌ",
+    masdarQiyasi: "مَنْقَعٌ / نَقَاعَةٌ",
+    sifatMusyabihat: "نَقِيعٌ / نَقِعٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "نَقِيعٌ / نَقِعٌ",
+      mufrod_muannas: "نَقِيعَةٌ / نَقِعَةٌ",
+      katsroh: "نِقَاعٌ / نُقُوعٌ / أَنْقِعَةٌ"
+    }
+  },
+  {
+    id: "naqala",
+    root: { fa: "ن", ain: "ق", lam: "ل" },
+    translation: "Memindahkan / Menularkan / Meriwayatkan",
+    babNum: 1,
+    bina: "Shohih",
+    masdarSamai: "نَقْلٌ / تَنْقَالٌ",
+    masdarQiyasi: "مَنْقَلٌ / نَقِيلٌ",
+    sifatMusyabihat: "نَقِيلٌ / نَقِلٌ"
+  },
+  {
+    id: "naqama",
+    root: { fa: "ن", ain: "ق", lam: "م" },
+    translation: "Membenci / Menghukum / Membalas dendam",
+    babNum: 2,
+    bina: "Shohih",
+    masdarSamai: "نَقْمٌ / نُقُومٌ",
+    masdarQiyasi: "مَنْقَمَةٌ / نَقَامَةٌ",
+    sifatMusyabihat: "نَقِيمٌ / نَقِمٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "نَقِيمٌ / نَقِمٌ",
+      mufrod_muannas: "نَقِيمَةٌ / نَقِمَةٌ",
+      katsroh: "نُقَمٌ / نِقَامٌ / أَنْقَامٌ"
+    }
+  },
+  {
+    id: "nakaha",
+    root: { fa: "ن", ain: "ك", lam: "ح" },
+    translation: "Menikahi / Melakukan pernikahan",
+    babNum: 2,
+    bina: "Shohih",
+    masdarSamai: "نِكَاحٌ / نَكْحٌ",
+    masdarQiyasi: "مَنْكَحٌ",
+    sifatMusyabihat: "نَكِيحٌ / نَكِحٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "نَكِيحٌ / نَكِحٌ",
+      mufrod_muannas: "نَكِيحَةٌ / نَكِحَةٌ",
+      katsroh: "نُكُحٌ / نِكَاحٌ",
+    }
+  },
+  {
+    id: "nakeda",
+    root: { fa: "ن", ain: "ك", lam: "د" },
+    translation: "Menjadi susah / Sengsara / Kikir",
+    babNum: 4,
+    bina: "Shohih",
+    masdarSamai: "نَكَدٌ / نُكُودٌ",
+    masdarQiyasi: "مَنْكَدٌ / نَكَادَةٌ",
+    sifatMusyabihat: "نَكِدٌ / نَكِيدٌ / أَنْكَدُ"
+  },
+  {
+    id: "nakira",
+    root: { fa: "ن", ain: "ك", lam: "ر" },
+    translation: "Ingkar / Tidak tahu / Merasa asing",
+    babNum: 4,
+    bina: "Shohih",
+    masdarSamai: "نَكَرٌ / نُكْرٌ / نُكْرَانٌ",
+    masdarQiyasi: "نَكَارَةٌ / مَنْكَرٌ",
+    sifatMusyabihat: "نَكِيرٌ / نَكِرٌ / أَنْكَرُ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "نَكِيرٌ / نَكِرٌ / أَنْكَرُ",
+      mufrod_muannas: "نَكِيرَةٌ / نَكِرَةٌ / نَكْرَاءُ",
+      katsroh: "نُكُرٌ / نُكَرَاءُ / أَنْكَارٌ",
+    }
+  },
+  {
+    id: "nakasa",
+    root: { fa: "ن", ain: "ك", lam: "س" },
+    translation: "Menundukkan / Membalikkan / Menjerumuskan",
+    babNum: 1,
+    bina: "Shohih",
+    masdarSamai: "نَكْسٌ / تَنْكَاسٌ",
+    masdarQiyasi: "مَنْكَسٌ",
+    sifatMusyabihat: "نَكِيسٌ / نَكِسٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "نَكِيسٌ / نَكِسٌ",
+      mufrod_muannas: "نَكِيسَةٌ / نَكِسَةٌ",
+      katsroh: "نُكُسٌ / أَنْكَاسٌ",
+    }
+  },
+  {
+    id: "nakaso",
+    root: { fa: "ن", ain: "ك", lam: "ص" },
+    translation: "Mundur kembali / Berbalik arah",
+    babNum: 1,
+    bina: "Shohih",
+    masdarSamai: "نُكُوصٌ / نَكْصٌ",
+    masdarQiyasi: "مَنْكَصٌ",
+    sifatMusyabihat: "نَكِيصٌ / نَكِصٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "نَكِيصٌ / نَكِصٌ",
+            mufrod_muannas: "نَكِيصَةٌ / نَكِصَةٌ",
+      katsroh: "نُكُصٌ / أَنْكَاصٌ",
+    }
+  },
+  {
+    id: "nakatha",
+    root: { fa: "ن", ain: "ك", lam: "ث" },
+    translation: "Merusak / Melanggar janji",
+    babNum: 1,
+    bina: "Shohih",
+    masdarSamai: "نَكْثٌ / نُكُوثٌ",
+    masdarQiyasi: "نَكِيثَةٌ",
+    sifatMusyabihat: "نَكِيثٌ / نَكِثٌ",
+    sifatMusyabihatPlural: {
+      katsroh: "نُكُثٌ / أَنْكَاثٌ"
+    }
+  },
+  {
+    id: "namaa",
+    root: { fa: "ن", ain: "م", lam: "و" },
+    translation: "Tumbuh / Berkembang / Bertambah",
+    babNum: 1,
+    bina: "Naqis",
+    masdarSamai: "نُمُوٌّ / نَمَاءٌ",
+    masdarQiyasi: "تَنْمِيَةٌ / مَنْمًى",
+    sifatMusyabihat: "نَمِىٌّ / نَمٍ"
+  },
+  {
+    id: "nahaba",
+    root: { fa: "ن", ain: "ه", lam: "ب" },
+    translation: "Merampas / Menjarah / Mengambil paksa",
+    babNum: 3,
+    bina: "Shohih",
+    masdarSamai: "نَهْبٌ / تَنْهَابٌ",
+    masdarQiyasi: "مَنْهَبٌ",
+    sifatMusyabihat: "نَهِيبٌ / نَهِبٌ"
+  },
+  {
+    id: "nahaja",
+    root: { fa: "ن", ain: "ه", lam: "ج" },
+    translation: "Menempuh jalan / Menjelaskan / Terengah-engah",
+    babNum: 3,
+    bina: "Shohih",
+    masdarSamai: "نَهْجٌ / نُهُوجٌ",
+    masdarQiyasi: "مَنْهَجٌ",
+    sifatMusyabihat: "نَهِيجٌ / نَهِجٌ / أَنْهَجُ"
+  },
+  {
+    id: "nahada",
+    root: { fa: "ن", ain: "ه", lam: "د" },
+    translation: "Bangkit / Menyerang / Menonjol",
+    babNum: 3,
+    bina: "Shohih",
+    masdarSamai: "نَهْدٌ / نُهُودٌ",
+    masdarQiyasi: "نَهَادَةٌ",
+    sifatMusyabihat: "نَهِيدٌ / نَهِدٌ"
+  },
+  {
+    id: "nahara",
+    root: { fa: "ن", ain: "ه", lam: "ر" },
+    translation: "Mengalirkan / Membentak / Menghardik",
+    babNum: 3,
+    bina: "Shohih",
+    masdarSamai: "نَهْرٌ / نَهَرٌ",
+    masdarQiyasi: "تَنْهَارٌ / مَنْهَرٌ",
+    sifatMusyabihat: "نَهِيرٌ / نَهِرٌ"
+  },
+  {
+    id: "nahay",
+    root: { fa: "ن", ain: "ه", lam: "ي" },
+    translation: "Melarang / Mencegah",
+    babNum: 3,
+    bina: "Naqis",
+    masdarSamai: "نَهْيٌ / نُهْيَةٌ",
+    masdarQiyasi: "تَنْهِيَةٌ / مَنْهًى",
+    sifatMusyabihat: "نَهِيٌّ / نَهٍِ"
+  },
+  {
+    id: "nama",
+    root: { fa: "ن", ain: "و", lam: "م" },
+    translation: "Tidur / Beristirahat",
+    babNum: 4,
+    bina: "Ajwaf",
+    masdarSamai: "نَوْمٌ / نِيَامَةٌ",
+    masdarQiyasi: "مَنَامٌ",
+    sifatMusyabihat: "نَئُومٌ / نَيُومٌ",
+    sifatMusyabihatPlural: {
+      katsroh: "نُوَمٌ / نِيَامٌ",
+      muntahal: "مَنَاوِمُ"
+    }
+  },
+  {
+    id: "naha",
+    root: { fa: "ن", ain: "و", lam: "ح" },
+    translation: "Meratap / Menangis histeris",
+    babNum: 1,
+    bina: "Ajwaf",
+    masdarSamai: "نَوْحٌ / نِيَاحٌ / نِيَاحَةٌ",
+    masdarQiyasi: "مَنَاحٌ",
+    sifatMusyabihat: "نَوُوحٌ / نَوِيحٌ"
+  },
+  {
+    id: "nala",
+    root: { fa: "ن", ain: "ي", lam: "ل" },
+    translation: "Memperoleh / Mendapatkan / Mencapai",
+    babNum: 4,
+    bina: "Ajwaf",
+    masdarSamai: "نَيْلٌ / نَالٌ",
+    masdarQiyasi: "مَنَالٌ",
+    sifatMusyabihat: "نَيِيلٌ / نَيِلٌ",
+    sifatMusyabihatPlural: {
+      katsroh: "أَنْيَالٌ / نِيَالٌ / نَيِلُونَ / نُيُلٌ",
+      muntahal: "نَوَائِلُ / مَنَايِلُ"
+    }
+  },
+  {
+    id: "nabba",
+    root: { fa: "ن", ain: "ب", lam: "ب" },
+    translation: "Berteriak / Berbunyi (kambing) / Mengeluarkan aroma",
+    babNum: 1,
+    bina: "Mudho'af",
+    masdarSamai: "نَبٌّ / نَبِيبٌ",
+    masdarQiyasi: "تَنْبِيبٌ / مَنَبٌّ",
+    sifatMusyabihat: "نَبِيبٌ / نَبٌّ"
+  },
+  {
+    id: "najja",
+    root: { fa: "ن", ain: "ج", lam: "ج" },
+    translation: "Mengeluarkan air / Mengalir / Mendesing",
+    babNum: 1,
+    bina: "Mudho'af",
+    masdarSamai: "نَجٌّ / نَجِيجٌ",
+    masdarQiyasi: "تَنْجَاجٌ / مَنَجٌّ",
+    sifatMusyabihat: "نَجِيجٌ / نَجٌّ"
+  },
+  {
+    id: "wasala",
+    root: { fa: "و", ain: "ص", lam: "ل" },
+    translation: "Sampai / tiba / menghubungkan / menyambung (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وَصْلٌ / صِلَةٌ / وُصُولٌ",
+    masdarQiyasi: "مَوْصِلٌ",
+    sifatMusyabihat: "وَصِيلٌ / وَصُولٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "wasaya",
+    root: { fa: "و", ain: "ص", lam: "ي" },
+    translation: "Berwasiat / memesankan / merekomendasikan (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Lafif Mafruq",
+    masdarSamai: "وَصْيٌ / وَصِيَّةٌ / تَوْصِيَةٌ",
+    masdarQiyasi: "مَوْصًى",
+    sifatMusyabihat: "وَصِيٌّ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "wadha_a",
+    root: { fa: "و", ain: "ض", lam: "ع" },
+    translation: "Meletakkan / menaruh / merendahkan (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 3,
+    bina: "Mitsal",
+    masdarSamai: "وَضْعٌ / ضَعَةٌ / مَوْضِعٌ",
+    masdarQiyasi: "مَوْضَعٌ",
+    sifatMusyabihat: "وَضِيعٌ / وَضُوعٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "wathi_a",
+    root: { fa: "و", ain: "ط", lam: "أ" },
+    translation: "Menginjak / memijak / menyetubuhi (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 4,
+    bina: "Mitsal Wal Mahmuz Lam",
+    masdarSamai: "وَطْءٌ / طَأَةٌ",
+    masdarQiyasi: "مَوْطَأٌ",
+    sifatMusyabihat: "وَطِيءٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "وَطِيءٌ",
+      mufrod_muannas: "وَطِيئَةٌ",
+      katsroh: "وُطُؤٌ / أَوْطِئَاءُ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "wa'azha",
+    root: { fa: "و", ain: "ع", lam: "ظ" },
+    translation: "Menasihati / memberi wejangan (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وَعْظٌ / عِظَةٌ / مَوْعِظَةٌ",
+    masdarQiyasi: "مَوْعِظٌ",
+    sifatMusyabihat: "وَعِيظٌ / وَعُوظٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "wa'a",
+    root: { fa: "و", ain: "ع", lam: "ي" },
+    translation: "Memahami / menghafal / menyadari / menampung (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Lafif Mafruq",
+    masdarSamai: "وَعْيٌ / وِعَاءٌ",
+    masdarQiyasi: "مَوْعًى",
+    sifatMusyabihat: "وَعِيٌّ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "وَعِيٌّ",
+      mufrod_muannas: "وَعِيَّةٌ",
+      katsroh: "أَوْعِيَاءُ / أَوْعِيَةٌ",
+      muntahal: "أَوْعِيَةٌ"
+    }
+  },
+  {
+    id: "wafara",
+    root: { fa: "و", ain: "ف", lam: "ر" },
+    translation: "Melimpah / mencukupi / menghemat (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وَفْرٌ / وُفُورٌ / وِفَارَةٌ",
+    masdarQiyasi: "مَوْفِرٌ",
+    sifatMusyabihat: "وَفِيرٌ / وَفُورٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "wafadha",
+    root: { fa: "و", ain: "ف", lam: "ض" },
+    translation: "Berlari cepat / bergegas (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وَفْضٌ / وَفَضَانٌ",
+    masdarQiyasi: "مَوْفِضٌ",
+    sifatMusyabihat: "وَفِيضٌ / وَفَّاضٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "وَفِيضٌ / وَفَّاضٌ",
+      mufrod_muannas: "وَفِيضَةٌ / وَفَّاضَةٌ",
+      katsroh: "أَوْفِضَاءُ / وَفَّاضُونَ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "wafaqa",
+    root: { fa: "و", ain: "ف", lam: "ق" },
+    translation: "Sesuai / cocok / pas / menepati (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وَفْقٌ / وِفَاقٌ",
+    masdarQiyasi: "مَوْفِقٌ",
+    sifatMusyabihat: "وَفِيقٌ / وَفُوقٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "waqaba",
+    root: { fa: "و", ain: "ق", lam: "ب" },
+    translation: "Masuk / tenggelam / menjadi gelap (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وَقْبٌ / وُقُوبٌ",
+    masdarQiyasi: "مَوْقِبٌ",
+    sifatMusyabihat: "وَقِيبٌ / وَقُوبٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "waqada",
+    root: { fa: "و", ain: "ق", lam: "د" },
+    translation: "Menyala / berkobar (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وَقْدٌ / وُقُودٌ / وَقَدَانٌ",
+    masdarQiyasi: "مَوْقِدٌ",
+    sifatMusyabihat: "وَقِيدٌ / وَقُودٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "waqa_a",
+    root: { fa: "و", ain: "ق", lam: "ع" },
+    translation: "Jatuh / terjadi / terletak (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 3,
+    bina: "Mitsal",
+    masdarSamai: "وُقُوعٌ / وَقْعٌ",
+    masdarQiyasi: "مَوْقَعٌ",
+    sifatMusyabihat: "وَقِيعٌ / وَقُوعٌ"
+  },
+  {
+    id: "waqafa",
+    root: { fa: "و", ain: "ق", lam: "ف" },
+    translation: "Berdiri / berhenti / mewakafkan (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وَقْفٌ / وُقُوفٌ",
+    masdarQiyasi: "مَوْقِفٌ",
+    sifatMusyabihat: "وَقِيفٌ / وَقُوفٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "waka_a",
+    root: { fa: "و", ain: "ك", lam: "أ" },
+    translation: "Menekan / bersandar / duduk mantap (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وَكْئٌ / وُكَاءٌ",
+    masdarQiyasi: "مَوْكَأٌ",
+    sifatMusyabihat: "وَكِؤٌ / وَكِيءٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "wakaba",
+    root: { fa: "و", ain: "ك", lam: "ب" },
+    translation: "Berjalan perlahan / rajin / terus-menerus (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وَكْبٌ / وُكُوبٌ / وَكَبَانٌ",
+    masdarQiyasi: "مَوْكِبٌ",
+    sifatMusyabihat: "وَكِيبٌ / وَكُوبٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "wakala",
+    root: { fa: "و", ain: "ك", lam: "ل" },
+    translation: "Menyerahkan urusan / mewakilkan / berserah diri (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وَكْلٌ / وُكُولٌ / وَكَلةٌ",
+    masdarQiyasi: "مَوْكِلٌ",
+    sifatMusyabihat: "وَكِيلٌ / وَكُولٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "walada",
+    root: { fa: "و", ain: "ل", lam: "د" },
+    translation: "Melahirkan / memperanakkan (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وِلَادَةٌ / مَوْلِدٌ / وَلَدٌ",
+    masdarQiyasi: "مَوْلِدٌ",
+    sifatMusyabihat: "وَلِيدٌ / وَلُودٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "وَلِيدٌ / وَلُودٌ",
+      mufrod_muannas: "وَلِيدَةٌ / وَلُودَةٌ",
+      katsroh: "وِلْدَانٌ / وُلُدٌ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "waligha",
+    root: { fa: "و", ain: "ل", lam: "غ" },
+    translation: "Menjilat wadah (anjing) / meminum sedikit (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 4,
+    bina: "Mitsal",
+    masdarSamai: "وَلْغٌ / وُلُوغٌ",
+    masdarQiyasi: "مَوْلَغٌ",
+    sifatMusyabihat: "وَلِيغٌ / وَلُوغٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "waliya",
+    root: { fa: "و", ain: "ل", lam: "ي" },
+    translation: "Menguasai / memimpin / menolong / dekat (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 6,
+    bina: "Lafif Mafruq",
+    masdarSamai: "وِلَايَةٌ / وَلَايَةٌ / وَلْيٌ",
+    masdarQiyasi: "مَوْلًى",
+    sifatMusyabihat: "وَلِيٌّ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "wajaba",
+    root: { fa: "و", ain: "ج", lam: "ب" },
+    translation: "Wajib / harus / tetap / gugur (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وُجُوبٌ / وَجْبٌ / وَجْبَةٌ",
+    masdarQiyasi: "مَوْجِبٌ",
+    sifatMusyabihat: "وَجِيبٌ / وَجُوبٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "wajila",
+    root: { fa: "و", ain: "ج", lam: "ل" },
+    translation: "Takut / gentar (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 4,
+    bina: "Mitsal",
+    masdarSamai: "وَجَلٌ / مَوْجَلٌ",
+    masdarQiyasi: "مَوْجَلٌ",
+    sifatMusyabihat: "وَجِلٌ / وَجِيلٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "wajia",
+    root: { fa: "و", ain: "ج", lam: "ع" },
+    translation: "Merasa sakit / menderita (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 4,
+    bina: "Mitsal",
+    masdarSamai: "وَجَعٌ / مَوْجَعٌ",
+    masdarQiyasi: "مَوْجَعٌ",
+    sifatMusyabihat: "وَجِعٌ / وَجِيعٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "wahada",
+    root: { fa: "و", ain: "ح", lam: "د" },
+    translation: "Menjadi tunggal / menyendiri (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وَحْدٌ / وُحُودٌ / وَحَادَةٌ",
+    masdarQiyasi: "مَوْحِدٌ",
+    sifatMusyabihat: "وَحِيدٌ / وُحَادٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "وَحِيدٌ / وُحَادٌ",
+      mufrod_muannas: "وَحِيدَةٌ / وُحَادَةٌ",
+      katsroh: "وُحَدَاءُ / وُحَادُونَ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "wahaa",
+    root: { fa: "و", ain: "ح", lam: "ي" },
+    translation: "Membisikkan / memberi wahyu / menulis (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Lafif Mafruq",
+    masdarSamai: "وَحْيٌ / وُحِيٌّ",
+    masdarQiyasi: "مَوْحًى",
+    sifatMusyabihat: "وَحِيٌّ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "وَحِيٌّ",
+      mufrod_muannas: "وَحِيَّةٌ",
+      katsroh: "أَوْحِيَاءُ / وُحِيٌّ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "wada_a",
+    root: { fa: "و", ain: "د", lam: "ع" },
+    translation: "Meninggalkan / membiarkan / berdamai / titip (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 3,
+    bina: "Mitsal",
+    masdarSamai: "وَدْعٌ / وَدَاعٌ / دَعَةٌ",
+    masdarQiyasi: "مَوْدَعٌ",
+    sifatMusyabihat: "وَدِيعٌ"
+  },
+  {
+    id: "wadhara",
+    root: { fa: "و", ain: "ذ", lam: "ر" },
+    translation: "Meninggalkan / membiarkan (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 3,
+    bina: "Mitsal",
+    masdarSamai: "وَذْرٌ",
+    masdarQiyasi: "مَوْذَرٌ",
+    sifatMusyabihat: "وَذِيرٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "وَذِيرٌ",
+      mufrod_muannas: "وَذِيرَةٌ",
+      katsroh: "أَوْذِرَاءُ / وُذُرٌ",
+      muntahal: "-.",
+      explanation: "jama وُذُرٌ sama'i"
+    }
+  },
+  {
+    id: "warada",
+    root: { fa: "و", ain: "ر", lam: "د" },
+    translation: "Datang / tiba / sampai / hadir di sumber air (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وُرُودٌ / وَرْدٌ",
+    masdarQiyasi: "مَوْرِدٌ",
+    sifatMusyabihat: "وَرِيدٌ / وَرُودٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "وَرِيدٌ / وَرُودٌ",
+      mufrod_muannas: "وَرِيدَةٌ / وَرُودَةٌ",
+      katsroh: "وُرُدٌ / أَوْرِدَةٌ",
+      muntahal: "أَوْرِدَةٌ"
+    }
+  },
+  {
+    id: "waraqa",
+    root: { fa: "و", ain: "ر", lam: "ق" },
+    translation: "Mengeluarkan daun / berdaun rimbun / mencetak uang perak (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وَرَقٌ / وُرُوقٌ",
+    masdarQiyasi: "مَوْرِقٌ",
+    sifatMusyabihat: "وَرِيقٌ / وَرِقٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "وَرِيقٌ / وَرِقٌ",
+      mufrod_muannas: "وَرِيقَةٌ / وَرِقَةٌ",
+      katsroh: "وُرُقٌ / أَوْرِقَاءُ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "warima",
+    root: { fa: "و", ain: "ر", lam: "م" },
+    translation: "Bengkak / menggelembung (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 6,
+    bina: "Mitsal",
+    masdarSamai: "وَرَمٌ / وُرُومٌ",
+    masdarQiyasi: "مَوْرِمٌ",
+    sifatMusyabihat: "وَرِمٌ / وَرِيمٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "wazara",
+    root: { fa: "و", ain: "ز", lam: "ر" },
+    translation: "Memikul beban / berdosa / membantu (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وِزْرٌ / وِزَارَةٌ",
+    masdarQiyasi: "مَوْزِرٌ",
+    sifatMusyabihat: "وَزِيرٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "wazana",
+    root: { fa: "و", ain: "ز", lam: "ن" },
+    translation: "Menimbang / mengukur / menilai berat (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وَزْنٌ / زِنَةٌ",
+    masdarQiyasi: "مَوْزِنٌ",
+    sifatMusyabihat: "وَزِينٌ / وَزُونٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "wasi_a",
+    root: { fa: "و", ain: "س", lam: "ع" },
+    translation: "Luas / lapang / memuat / menampung (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 4,
+    bina: "Mitsal",
+    masdarSamai: "سَعَةٌ / وُسْعٌ",
+    masdarQiyasi: "مَوْسَعٌ",
+    sifatMusyabihat: "وَسِيعٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "wasama",
+    root: { fa: "و", ain: "س", lam: "م" },
+    translation: "Memberi tanda / mencap / menghiasi (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وَسْمٌ / سِمَةٌ",
+    masdarQiyasi: "مَوْسِمٌ",
+    sifatMusyabihat: "وَسِيمٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "wasira",
+    root: { fa: "و", ain: "س", lam: "ر" },
+    translation: "Menjadi kaya / hidup makmur (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 4,
+    bina: "Mitsal",
+    masdarSamai: "وَسَرٌ",
+    masdarQiyasi: "مَوْسَرٌ",
+    sifatMusyabihat: "وَسِيرٌ / وَسِرٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "washaa",
+    root: { fa: "و", ain: "ش", lam: "ي" },
+    translation: "Menghias / memfitnah / mengadu domba (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Lafif Mafruq",
+    masdarSamai: "وَشْيٌ / وِشَايَةٌ",
+    masdarQiyasi: "مَوْشًى",
+    sifatMusyabihat: "وَشِيٌّ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "wasafa",
+    root: { fa: "و", ain: "ص", lam: "ف" },
+    translation: "Sifat / menyemati / menggambarkan (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وَصْفٌ / صِفَةٌ",
+    masdarQiyasi: "مَوْصِفٌ",
+    sifatMusyabihat: "وَصِيفٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "hazza",
+    root: { fa: "ه", ain: "ز", lam: "ز" },
+    translation: "Menggoncang / menggetarkan / menggoyangkan (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Mudho'af",
+    masdarSamai: "هَزٌّ / هَزِيزٌ",
+    masdarQiyasi: "مَهَزٌّ",
+    sifatMusyabihat: "هَزِيزٌ / هَزَّازٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "هَزِيزٌ / هَزَّازٌ",
+      mufrod_muannas: "هَزِيزَةٌ / هَزَّازَةٌ",
+      katsroh: "هِزَّانٌ / هَزَّازُونَ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "hasysya",
+    root: { fa: "ه", ain: "ش", lam: "ش" },
+    translation: "Menjadi rapuh / gembira / menyongsong dengan senyuman / merontokkan daun (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 4,
+    bina: "Mudho'af",
+    masdarSamai: "هَشَاشَةٌ / هَشٌّ",
+    masdarQiyasi: "مَهَشٌّ",
+    sifatMusyabihat: "هَشِيشٌ / هَشٌّ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "hadhama",
+    root: { fa: "ه", ain: "ض", lam: "م" },
+    translation: "Mencerna makanan / menindas / bersabar (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Shohih",
+    masdarSamai: "هَضْمٌ / هَضِيمٌ",
+    masdarQiyasi: "مَهْضَمٌ",
+    sifatMusyabihat: "هَضِيمٌ / هَضُومٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "halaka",
+    root: { fa: "ه", ain: "ل", lam: "ك" },
+    translation: "Binasah / hancur / mati (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Shohih",
+    masdarSamai: "هَلَاكٌ / هُلْكٌ / تَهْلُكَةٌ",
+    masdarQiyasi: "مَهْلَكٌ",
+    sifatMusyabihat: "هَلِيكٌ / هَلُوكٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "هَلِيكٌ / هَلُوكٌ",
+      mufrod_muannas: "هَلِيكَةٌ / هَلُوكَةٌ",
+      katsroh: "هَلْكَى / هُلَّاكٌ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "hamma",
+    root: { fa: "ه", ain: "م", lam: "م" },
+    translation: "Bertekad / merencanakan / menyedihkan (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Mudho'af",
+    masdarSamai: "هَمٌّ / مَهَمَّةٌ",
+    masdarQiyasi: "مَهَمٌّ",
+    sifatMusyabihat: "هَمِيمٌ / هَمُومٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "هَمِيمٌ / هَمُومٌ",
+      mufrod_muannas: "هَمِيمَةٌ / هَمُومَةٌ",
+      katsroh: "أَهِمَّاءُ / هُمُومٌ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "hani_a",
+    root: { fa: "ه", ain: "ن", lam: "أ" },
+    translation: "Menikmati makanan / merasa senang / bahagia (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 4,
+    bina: "Mahmuz Lam",
+    masdarSamai: "هَنْئٌ / هَنَاءٌ / هَنَاءَةٌ",
+    masdarQiyasi: "مَهْنَأٌ",
+    sifatMusyabihat: "هَنِيءٌ / هَنِئٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "hawiya",
+    root: { fa: "ه", ain: "و", lam: "ي" },
+    translation: "Mencintai / menyukai / menyayangi (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 4,
+    bina: "Lafif Maqrun",
+    masdarSamai: "هَوًى / هَوَاءٌ",
+    masdarQiyasi: "مَهْوًى",
+    sifatMusyabihat: "هَوِيٌّ / هَوٍ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "هَوِيٌّ",
+      mufrod_muannas: "هَوِيَّةٌ",
+      katsroh: "أَهْوِيَاءُ",
+      muntahal: "أَهَاوِيُّ"
+    }
+  },
+  {
+    id: "hawa",
+    root: { fa: "ه", ain: "و", lam: "ي" },
+    translation: "Jatuh / runtuh / turun dengan cepat (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Lafif Maqrun",
+    masdarSamai: "هُوِيٌّ / هَوًى",
+    masdarQiyasi: "مَهْوًى",
+    sifatMusyabihat: "هَوِيٌّ",
+    sifatMusyabihatPlural: {
+      katsroh: "ُاَهْوِيَّاء",
+      muntahal: "أَهَاوِيُّ"
+    }
+  },
+  {
+    id: "haana",
+    root: { fa: "ه", ain: "و", lam: "ن" },
+    translation: "Menjadi hina / rendah / sepele / mudah (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Ajwaf",
+    masdarSamai: "هَوْنٌ / هَوَانٌ / مَهَانَةٌ",
+    masdarQiyasi: "مَهَانٌ",
+    sifatMusyabihat: "هَوِينٌ / هَيِّنٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "haaba",
+    root: { fa: "ه", ain: "ي", lam: "ب" },
+    translation: "Takut / segan / menghormati (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 4,
+    bina: "Ajwaf",
+    masdarSamai: "هَيْبٌ / هَيْبَةٌ / مَهَابَةٌ",
+    masdarQiyasi: "مَهَابٌ",
+    sifatMusyabihat: "هَيُوبٌ / هَيِيبٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "هَيُوبٌ / هَيِيبٌ",
+      mufrod_muannas: "هَيُوبَةٌ / هَيِيبَةٌ",
+      katsroh: "هُيُبٌ / هُيَّبٌ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "habba",
+    root: { fa: "ه", ain: "ب", lam: "ب" },
+    translation: "Meniup (angin) / terbangun / bangkit melakukan sesuatu (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Mudho'af",
+    masdarSamai: "هَبٌّ / هُبُوبٌ / هَبِيبٌ",
+    masdarQiyasi: "مَهَبٌّ",
+    sifatMusyabihat: "هَبُوبٌ / هَبِيبٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "هَبُوبٌ / هَبِيبٌ",
+      mufrod_muannas: "هَبُوبَةٌ / هَبِيبَةٌ",
+      katsroh: "هُبُبٌ / أَهْبِبَةٌ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "hadda",
+    root: { fa: "ه", ain: "د", lam: "د" },
+    translation: "Meruntuhkan / merobohkan / melemahkan (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Mudho'af",
+    masdarSamai: "هَدٌّ / هَدَادٌ",
+    masdarQiyasi: "مَهَدٌّ",
+    sifatMusyabihat: "هَدِيدٌ / هَدُودٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "harra",
+    root: { fa: "ه", ain: "ر", lam: "ر" },
+    translation: "Menyalak (anjing) / membenci / bersuara parau (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mudho'af",
+    masdarSamai: "هَرِيرٌ / هَرٌّ",
+    masdarQiyasi: "مَهَرٌّ",
+    sifatMusyabihat: "هَرِيرٌ / هَرٌّ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "hadhdha",
+    root: { fa: "ه", ain: "ض", lam: "ض" },
+    translation: "Memecahkan / meremukkan / menindas (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Mudho'af",
+    masdarSamai: "هَضٌّ",
+    masdarQiyasi: "مَهَضٌّ",
+    sifatMusyabihat: "هَضِيضٌ / هَضٌّ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "halla",
+    root: { fa: "ه", ain: "ل", lam: "ل" },
+    translation: "Terbit (bulan) / mengalir / gembira (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Mudho'af",
+    masdarSamai: "هَلٌّ / هَلِيلٌ",
+    masdarQiyasi: "مَهَلٌّ",
+    sifatMusyabihat: "هَلِيلٌ / هَلُولٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "hanna",
+    root: { fa: "ه", ain: "ن", lam: "ن" },
+    translation: "Menangis pelan / merintih / mengasihi (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Mudho'af",
+    masdarSamai: "هَنٌّ / هَنِينٌ",
+    masdarQiyasi: "مَهَنٌّ",
+    sifatMusyabihat: "هَنِينٌ / هَنُونٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "hawwa",
+    root: { fa: "ه", ain: "و", lam: "و" },
+    translation: "Menjatuhkan diri / merosot / menjadi kosong (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Mudho'af",
+    masdarSamai: "هَوٌّْ",
+    masdarQiyasi: "مَهَوٌّ",
+    sifatMusyabihat: "هَوِيٌّ / هَوَّاعٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "هَوِيٌّ / هَوَّاعٌ",
+      mufrod_muannas: "هَوِيَّةٌ / هَوَّاعَةٌ",
+      katsroh: "أَهْوِيَاءُ / هَوَّاعُونَ",
+      muntahal: "-"
+    }
+  },
+  {
+    id: "wahaba",
+    root: { fa: "و", ain: "ه", lam: "ب" },
+    translation: "Memberi / menghibahkan (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 3,
+    bina: "Mitsal",
+    masdarSamai: "وَهْبٌ / هِبَةٌ",
+    masdarQiyasi: "مَوْهَبٌ",
+    sifatMusyabihat: "وَهَّابٌ / وَهُوبٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "وَهَّابٌ / وَهُوبٌ",
+      mufrod_muannas: "وَهَّابَةٌ / وَهُوبَةٌ",
+      katsroh: "وُهُبٌ / وَهَّابُونَ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "wahana",
+    root: { fa: "و", ain: "ه", lam: "ن" },
+    translation: "Menjadi lemah / lesu (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal",
+    masdarSamai: "وَهْنٌ / وَهَنٌ / وُهُونٌ",
+    masdarQiyasi: "مَوْهَنٌ",
+    sifatMusyabihat: "وَهِنٌ / وَهِينٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "wajja",
+    root: { fa: "و", ain: "ج", lam: "ج" },
+    translation: "Berjalan cepat / bersuara keras / berkobar (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Mitsal Wal Mudho'af'",
+    masdarSamai: "وَجٌّ / وَجِيجٌ",
+    masdarQiyasi: "مَوْجَجٌ",
+    sifatMusyabihat: "وَجِيجٌ / وَجَّاجٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "وَجِيجٌ / وَجَّاجٌ",
+      mufrod_muannas: "وَجِيجَةٌ / وَجَّاجَةٌ",
+      katsroh: "أَوْجِجَةٌ / وَجَّاجُونَ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "wadda",
+    root: { fa: "و", ain: "د", lam: "د" },
+    translation: "Mencintai / menyukai / menginginkan (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 4,
+    bina: "Mitsal Wal Mudho'af",
+    masdarSamai: "وُدٌّ / وِدٌّ / مَوَدَّةٌ",
+    masdarQiyasi: "مَوْدَدٌ",
+    sifatMusyabihat: "وَدِيدٌ / وَدُودٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "warra",
+    root: { fa: "و", ain: "ر", lam: "ر" },
+    translation: "Membakar / menyalakan api / berlemak (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Mitsal Wal Mudho'af",
+    masdarSamai: "وَرٌّ / وَرِيرٌ",
+    masdarQiyasi: "مَوْرٌّ",
+    sifatMusyabihat: "وَرِيرٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "وَرِيرٌ",
+      mufrod_muannas: "وَرِيرَةٌ",
+      katsroh: "أَوْرِرَةٌ / وِرَارٌ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "wazza",
+    root: { fa: "و", ain: "ز", lam: "ز" },
+    translation: "Mendorong / merangsang / mendesak (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Mitsal Wal Mudho'af",
+    masdarSamai: "وَزٌّ / وَزِيزٌ",
+    masdarQiyasi: "مَوْزٌّ",
+    sifatMusyabihat: "وَزِيزٌ / وَزَّازٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "وَزِيزٌ / وَزَّازٌ",
+      mufrod_muannas: "وَزِيزَةٌ / وَزَّازَةٌ",
+      katsroh: "أَوْزِزَةٌ / وَزَّازُونَ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "wassa",
+    root: { fa: "و", ain: "س", lam: "س" },
+    translation: "Membisikkan / menanamkan keraguan (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Mitsal Wal Mudho'af",
+    masdarSamai: "وَسْوَسَةٌ / وَسٌّ",
+    masdarQiyasi: "مَوْسٌّ",
+    sifatMusyabihat: "وَسِيسٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "وَسِيسٌ",
+      mufrod_muannas: "وَسِيسَةٌ",
+      katsroh: "أَوْسِسَةٌ / وِسَاسٌ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "wasysya",
+    root: { fa: "و", ain: "ش", lam: "ش" },
+    translation: "Menghiasi / berbisik / memfitnah (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal Wal Mudho'af",
+    masdarSamai: "وَشٌّ / وَشِيشٌ",
+    masdarQiyasi: "مَوْشٌّ",
+    sifatMusyabihat: "وَشِيشٌ / وَشُوشٌ",
+    sifatMusyabihatPlural: {
+      katsroh: "هُشٌّ / هِشَاشٌ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "wasysa",
+    root: { fa: "و", ain: "ص", lam: "ص" },
+    translation: "Menyambung / merapatkan / mengikat (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal Wal Mudho'af",
+    masdarSamai: "وَصٌّ / وَصِيصٌ",
+    masdarQiyasi: "مَوْصٌّ",
+    sifatMusyabihat: "وَصِيصٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "وَصِيصٌ",
+      mufrod_muannas: "وَصِيصَةٌ",
+      katsroh: "أَوْصِصَةٌ / وِصَاصٌ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "wathta",
+    root: { fa: "و", ain: "ط", lam: "ط" },
+    translation: "Menetap / membiasakan diri / menundukkan (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Mitsal Wal Mudho'af",
+    masdarSamai: "وَطٌّ / وَطِيطٌ",
+    masdarQiyasi: "مَوْطٌّ",
+    sifatMusyabihat: "وَطِيطٌ / وَطَّاطٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "وَطِيطٌ / وَطَّاطٌ",
+      mufrod_muannas: "وَطِيطَةٌ / وَطَّاطَةٌ",
+      katsroh: "أَوْطِطَةٌ / وَطَّاطُونَ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "waffa",
+    root: { fa: "و", ain: "ف", lam: "ف" },
+    translation: "Menjadi banyak / melimpah / sempurna (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal Wal Mudho'af",
+    masdarSamai: "وَفٌّ / وَفِيفٌ",
+    masdarQiyasi: "مَوْفٌّ",
+    sifatMusyabihat: "وَفِيفٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "وَفِيفٌ",
+      mufrod_muannas: "وَفِيفَةٌ",
+      katsroh: "أَوْفِفَةٌ / وِفَافٌ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "waqqa",
+    root: { fa: "و", ain: "ق", lam: "ق" },
+    translation: "Memelihara / menjaga / berkokok (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Mitsal Wal Mudho'af",
+    masdarSamai: "وَقٌّ / وَقِيقٌ",
+    masdarQiyasi: "مَوْقٌّ",
+    sifatMusyabihat: "وَقِيقٌ / وَقَّاقٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "وَقِيقٌ / وَقَّاقٌ",
+      mufrod_muannas: "وَقِيقَةٌ / وَقَّاقَةٌ",
+      katsroh: "أَوْقِقَةٌ / وَقَّاقُونَ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "habatha",
+    root: { fa: "ه", ain: "ب", lam: "ط" },
+    translation: "Turun / mendarat / merosot harganya (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Shohih",
+    masdarSamai: "هُبُوطٌ / هَبْطٌ",
+    masdarQiyasi: "مَهْبِطٌ",
+    sifatMusyabihat: "هَبِيطٌ / هَبُوطٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "هَبِيطٌ / هَبُوطٌ",
+      mufrod_muannas: "هَبِيطَةٌ / هَبُوطَةٌ",
+      katsroh: "هُبُطٌ / هَبَاطَى",
+      muntahal: "هَبَاطَى"
+    }
+  },
+  {
+    id: "hajara",
+    root: { fa: "ه", ain: "ج", lam: "ر" },
+    translation: "Berhijrah / meninggalkan / menjauhkan diri / mengigau (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Shohih",
+    masdarSamai: "هَجْرٌ / هِجْرَانٌ / هِجْرَةٌ",
+    masdarQiyasi: "مَهْجَرٌ",
+    sifatMusyabihat: "هَجِيرٌ / هَجُورٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "haja_a",
+    root: { fa: "ه", ain: "ج", lam: "ع" },
+    translation: "Tidur malam / berbaring / tenang (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 3,
+    bina: "Shohih",
+    masdarSamai: "هُجُوعٌ / هَجْعٌ",
+    masdarQiyasi: "مَهْجَعٌ",
+    sifatMusyabihat: "هَجُوعٌ / هَجِيعٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "هَجُوعٌ / هَجِيعٌ",
+      mufrod_muannas: "هَجُوعَةٌ / هَجِيعَةٌ",
+      katsroh: "هُجُعٌ / أَهْجَاعٌ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "hadama",
+    root: { fa: "ه", ain: "د", lam: "م" },
+    translation: "Meruntuhkan / menghancurkan gedung / membongkar (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Shohih",
+    masdarSamai: "هَدْمٌ / هُدُومٌ",
+    masdarQiyasi: "مَهْدِمٌ",
+    sifatMusyabihat: "هَدِيمٌ / هَدُومٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
+  {
+    id: "hadaa",
+    root: { fa: "ه", ain: "د", lam: "ي" },
+    translation: "Memberi petunjuk / menunjuki jalan / membimbing (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Naqish Ya'i",
+    masdarSamai: "هُدًى / هِدَايَةٌ / هَدْيٌ",
+    masdarQiyasi: "مَهْدًى",
+    sifatMusyabihat: "هَدِيٌّ"
+  },
+  {
+    id: "haraba",
+    root: { fa: "ه", ain: "ر", lam: "ب" },
+    translation: "Melarikan diri / kabur / lolos (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 1,
+    bina: "Shohih",
+    masdarSamai: "هَرَبٌ / هُرُوبٌ",
+    masdarQiyasi: "مَهْرَبٌ",
+    sifatMusyabihat: "هَرُوبٌ / هَرِيبٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "هَرُوبٌ / هَرِيبٌ",
+      mufrod_muannas: "هَرُوبَةٌ / هَرِيبَةٌ",
+      katsroh: "هُرُبٌ / هَرَّابُونَ",
+      muntahal: "-."
+    }
+  },
+  {
+    id: "harima",
+    root: { fa: "ه", ain: "ر", lam: "م" },
+    translation: "Menjadi tua renta / pikun (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 4,
+    bina: "Shohih",
+    masdarSamai: "هَرَمٌ / مَهْرَمٌ",
+    masdarQiyasi: "مَهْرَمٌ",
+    sifatMusyabihat: "هَرِمٌ",
+    sifatMusyabihatPlural: {
+      mufrod_mudzakkar: "هَرِمٌ",
+      mufrod_muannas: "هَرِمَةٌ",
+      katsroh: "هَرِمُونَ / هَرَامَى",
+      muntahal: "هَرَامَى"
+    }
+  },
+  {
+    id: "haza_a",
+    root: { fa: "ه", ain: "ز", lam: "أ" },
+    translation: "Mengejek / mengolok-olok / mempermainkan (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 3,
+    bina: "Mahmuz Lam",
+    masdarSamai: "هُزْءٌ / هُزُؤٌ / هُزُوءَةٌ",
+    masdarQiyasi: "مَهْزَأٌ",
+    sifatMusyabihat: "هَزُوءٌ / هَزِئٌ",
+    sifatMusyabihatPlural": {
+      muntahal": "-"
+    }
+  },
+  {
+    id: "hazama",
+    root: { fa: "ه", ain: "ز", lam: "م" },
+    translation: "Mengalahkan musuh / menaklukkan / menghancurkan barisan (Kamus Munawwir, Lisanul 'Arab)",
+    babNum: 2,
+    bina: "Shohih",
+    masdarSamai: "هَزْمٌ / هَزِيمَةٌ",
+    masdarQiyasi: "مَهْزِمٌ",
+    sifatMusyabihat: "هَزِيمٌ / هَزُومٌ",
+    sifatMusyabihatPlural: {
+      muntahal: "-"
+    }
+  },
   },
   {
     id: "waada",
