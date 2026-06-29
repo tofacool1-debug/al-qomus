@@ -25,7 +25,8 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     masdarSamai: "مَدٌّ",
     masdarQiyasi: "تَمْدِيدٌ",
     sifatMusyabihat: "مَدِيدٌ",
-    {
+  },
+  {
     id: "nadda",
     root: { fa: "ن", ain: "د", lam: "د" },
     translation: "Melarikan diri / kabur / menjauh / ganjil (Kamus Munawwir, Lisanul 'Arab)",
@@ -36,7 +37,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
     sifatMusyabihat: "نَدِيدٌ / نَدٌّ",
     sifatMusyabihatPlural: {
       muntahal: "-"
-    }
+   }
   },
   {
     id: "nazza",
@@ -52,7 +53,7 @@ export const PRESET_DICTIONARY: DictionaryEntry[] = [
       mufrod_muannas: "نَزِيزَةٌ",
       katsroh: "أَنْزِزَةٌ / نِزَازٌ",
       muntahal: "-."
-    }
+   }
   },
   {
     id: "nassa",
