@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa:wght@400;700&family=Fira+Code:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Amiri", "Scheherazade New", serif;
+  --font-thuluth: "Aref Ruqaa", serif;
+  --font-mono: "Fira Code", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Elegant floating animation for calligraphy */
+@keyframes floatText {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    text-shadow: 0 4px 6px rgba(245, 158, 11, 0.15);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.02);
+    text-shadow: 0 12px 20px rgba(245, 158, 11, 0.35);
+  }
+}
+
+.animate-floating-gold {
+  animation: floatText 4s ease-in-out infinite;
+}
+
+/* Custom scrollbars for clean layouts */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Custom styles for glowing effects */
+.glow-card-emerald {
+  box-shadow: 0 4px 30px rgba(16, 185, 129, 0.05);
+}
+
+.glow-card-amber {
+  box-shadow: 0 4px 30px rgba(245, 158, 11, 0.05);
+}
